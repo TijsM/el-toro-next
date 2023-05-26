@@ -1,5 +1,4 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
@@ -18,37 +17,37 @@ export default function Home() {
           </a>
         </header>
         <section id="calendar">
-          <h2 class="textGreen">Kalender</h2>
+          <h2 className="textGreen">Kalender</h2>
           <h3>Zondag 4 september</h3>
           <article>
             <h3>Kinderkoers</h3>
-            <div class="details">
-              <div class="calendarItem">
+            <div className="details">
+              <div className="calendarItem">
                 <span>14u00</span>
                 <div>
                   <div>Kinderen t.e.m. 5 jaar</div>
-                  <div class="distance">Rechte lijn van 500m</div>
+                  <div className="distance">Rechte lijn van 500m</div>
                 </div>
               </div>
-              <div class="calendarItem">
+              <div className="calendarItem">
                 <span>14u15</span>
                 <div>
                   <div>6 - 7 jaar</div>
-                  <div class="distance">1 ronde, 800m</div>
+                  <div className="distance">1 ronde, 800m</div>
                 </div>
               </div>
-              <div class="calendarItem">
+              <div className="calendarItem">
                 <span>14u30</span>
                 <div>
                   <div>8 - 9 jaar</div>
-                  <div class="distance">2 rondes, 1600m</div>
+                  <div className="distance">2 rondes, 1600m</div>
                 </div>
               </div>
-              <div class="calendarItem">
+              <div className="calendarItem">
                 <span>14u45</span>
                 <div>
                   <div>10 - 11 jaar</div>
-                  <div class="distance">2 rondes, 1600m</div>
+                  <div className="distance">2 rondes, 1600m</div>
                 </div>
               </div>
               <a data-scroll href="#inschrijvingKoers">
@@ -59,19 +58,19 @@ export default function Home() {
 
           <article>
             <h3>Retrokoers</h3>
-            <div class="details">
-              <div class="calendarItem">
+            <div className="details">
+              <div className="calendarItem">
                 <span>vanaf 13u00</span>
                 <span>
                   Inschrijvingen, startblad tekenen, startnummer ontvangen (5
                   euro)
                 </span>
               </div>
-              <div class="calendarItem">
+              <div className="calendarItem">
                 <span>15u30</span>
                 <span>Verkenningsronde en start</span>
               </div>
-              <div class="calendarItem">
+              <div className="calendarItem">
                 <span>17u00</span>
                 <span>Podiumceremonie</span>
               </div>
@@ -82,27 +81,35 @@ export default function Home() {
           </article>
         </section>
         <section id="parcours">
-          <div class="left">
-            <h2 id="parcoursHead" class="textYellow">
+          <div className="left">
+            <h2 id="parcoursHead" className="textYellow">
               Parcours
             </h2>
 
-            <div class="retroBike1">
-              <img src="./assets/retro_bike.png" alt="retro bike" />
+            <div className="retroBike1">
+              <Image
+                src="/retro_bike.png"
+                alt="retro bike"
+                width={500}
+                height={500}
+                style={{ objectFit: "contain" }}
+              />
             </div>
           </div>
-          <div class="right">
-            <img
+          <div className="right">
+            <Image
               id="plannetje"
-              class="parcoursImage"
-              src="./assets/parcours.jpg"
+              src="/parcours.jpg"
               alt="parcours race"
+              width={500}
+              height={500}
+              style={{ objectFit: "contain" }}
             />
           </div>
         </section>
         <section id="inschrijvingen">
-          <h2 class="textYellow">Inschrijven</h2>
-          <div class="inschijvingInfo">
+          <h2 className="textYellow">Inschrijven</h2>
+          <div className="inschijvingInfo">
             <p>
               Inschrijvingen volwassenen retrokoers: 10 euro <br />
               Inschrijvingen kinderen retrokoers: 3 euro <br />
@@ -118,8 +125,8 @@ export default function Home() {
           </div>
           <div id="inschrijvingContainer">
             <article id="inschrijvingKoers">
-              <div class="inschrijvingsContaier">
-                <h3 class="textGreen">Retrokoers</h3>
+              <div className="inschrijvingsContaier">
+                <h3 className="textGreen">Retrokoers</h3>
 
                 <form
                   method="post"
@@ -142,7 +149,7 @@ export default function Home() {
                     placeholder="de.kanibaal@gmail.com"
                   />
                   <label>Geboortedatum</label>
-                  <div class="dateInput">
+                  <div className="dateInput">
                     <input id="retroDay" type="number" placeholder="17" />
                     <input id="retroMonth" type="number" placeholder="06" />
                     <input id="retroYear" type="number" placeholder="1945" />
@@ -151,14 +158,14 @@ export default function Home() {
                   <div>
                     <input
                       id="retroIsLocal"
-                      class="radio"
+                      className="radio"
                       type="radio"
                       name="local"
                     />
                     ja
                     <input
                       id="retroIsNoLocal"
-                      class="radio"
+                      className="radio"
                       type="radio"
                       name="local"
                       checked
@@ -169,14 +176,14 @@ export default function Home() {
                   <div>
                     <input
                       id="isKid"
-                      class="radio"
+                      className="radio"
                       type="radio"
                       name="kidCheck"
                     />
                     ja
                     <input
                       id="isAdult"
-                      class="radio"
+                      className="radio"
                       type="radio"
                       name="kidCheck"
                       checked
@@ -190,21 +197,21 @@ export default function Home() {
           </div>
         </section>
         <section id="praktisch">
-          <h2 class="textYellow">Praktisch</h2>
-          <div class="praktischContent">
+          <h2 className="textYellow">Praktisch</h2>
+          <div className="praktischContent">
             <article>
-              <h3 class="textYellow">Bereikbaarheid en parking</h3>
+              <h3 className="textYellow">Bereikbaarheid en parking</h3>
               <div>
                 Er zijn parkeermogelijkheden op het parkeerterrein van Hubo en
                 van KSC Dikkelvenne. Bekijk zeker ons
-                <a data-scroll class="linkPlan" href="#plannetje">
+                <a data-scroll className="linkPlan" href="#plannetje">
                   plannetje
                 </a>
                 op deze website.
               </div>
             </article>
             <article>
-              <h3 class="textYellow">Kinderkoers</h3>
+              <h3 className="textYellow">Kinderkoers</h3>
               <div>
                 Ook de kinderen worden niet vergeten op de Groote Prijs El Toro.
                 De kinder-’koers’ zal hun deel zijn. Ookal zijn hun fietsjes nog
@@ -217,7 +224,7 @@ export default function Home() {
               </div>
             </article>
             <article>
-              <h3 class="textYellow">Reglement</h3>
+              <h3 className="textYellow">Reglement</h3>
               <div>
                 <ol>
                   <li>
