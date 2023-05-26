@@ -116,7 +116,8 @@ export default function Home() {
             </p>
             <p>
               Te betalen via overschrijving via
-              <span>BE13 8913 7410 2839</span> met mededeling "Retro - Naam"
+              <span>BE13 8913 7410 2839</span> met mededeling &quot;Retro -
+              Naam&quot;
             </p>
             <p>
               Omwille van verzekering dient iedere deelnemer zijn paspoort mee
