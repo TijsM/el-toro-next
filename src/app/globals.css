@@ -61,7 +61,7 @@ a {
 
 header {
   height: 100vh;
-  /* background-image: url("./assets/retroBG.jpg"); */
+  background-image: url("/retroBG.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -97,7 +97,7 @@ header a {
   width: 75%;
   height: 700px;
   max-width: 1000px;
-  /* background-image: url("./assets/calendarVector.svg"); */
+  background-image: url("/calendarVector.svg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -172,7 +172,7 @@ header a {
   -ms-grid-columns: 50% 50%;
   grid-template-columns: 50% 50%;
   grid-auto-flow: row;
-  /* background-image: url("./assets/parcoursVector.svg"); */
+  background-image: url("/parcoursVector.svg");
   background-repeat: no-repeat;
   background-size: 30%;
   background-position: 60% 50%;
@@ -235,7 +235,7 @@ header a {
 #inschrijvingen #inschrijvingKoers {
   height: 800px;
   width: 800px;
-  /* background-image: url("./assets/inschrijvingVector.svg"); */
+  background-image: url("/inschrijvingVector.svg");
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
