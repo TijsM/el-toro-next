@@ -31,7 +31,6 @@ a {
   display: block;
   width: 100px;
   text-align: center;
-  margin-top: px;
   text-decoration: none;
   border: #3d3a34 1px solid;
   color: #3d3a34;
@@ -43,108 +42,7 @@ a {
   font-size: 0.85em;
 }
 
-#praktisch {
-  color: #fff4da;
-}
-
-#praktisch .praktischContent {
-  max-width: 1100px;
-  margin: auto;
-}
-
-#praktisch .praktischContent h3 {
-  text-align: center;
-}
-
-#praktisch .praktischContent article {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 25% 75%;
-  grid-template-columns: 25% 75%;
-  margin: 30px;
-}
-
-#praktisch .praktischContent article div {
-  padding-left: 30px;
-  border-left: #065755 2px solid;
-  padding: 10px 50px;
-}
-
-#praktisch .praktischContent article div ol {
-  margin-left: 15px;
-}
-
-#praktisch .praktischContent article div ol li {
-  margin-bottom: 20px;
-}
-
-#praktisch .praktischContent article div ul {
-  margin-left: 15px;
-}
-
-#praktisch .praktischContent article div ul li {
-  margin-bottom: 5px;
-}
-
-#praktisch .praktischContent article div .linkPlan {
-  color: #fff4da;
-  font-weight: inherit;
-  font-size: inherit;
-  display: inline;
-  text-decoration: underline;
-  border: none;
-}
-
-#popupMessage {
-  display: none;
-  background-color: red;
-  width: 90%;
-  position: fixed;
-  bottom: 15px;
-  text-align: center;
-  padding: 20px;
-  left: 5%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 15px;
-  color: white;
-}
-
-@media screen and (max-width: 1200px) {
-}
-
-@media screen and (max-width: 1000px) {
-  #parcours {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  #parcours .right {
-    margin-top: 35px;
-    margin: auto;
-  }
-}
-
 @media screen and (max-width: 700px) {
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
   #calendar {
     overflow: hidden;
     background-size: 1050px;

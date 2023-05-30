@@ -27,6 +27,15 @@ const StHeader = styled.header`
   background-position: center;
   text-align: center;
   color: #fff4da;
+
+  @media screen and (max-width: 700px) {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    box-sizing: border-box;
+  }
 `;
 
 const StIntroText = styled.div`
