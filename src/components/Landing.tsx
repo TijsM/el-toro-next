@@ -1,7 +1,12 @@
+"use client";
+
+import styled from "styled-components";
+import { H1 } from "../styled-components/Types";
+
 export const Landing = () => {
   return (
-    <header>
-      <h1>Retro Grote Prijs El Toro</h1>
+    <StHeader>
+      <H1>Retro Grote Prijs El Toro</H1>
       <h2>4 September 2022</h2>
       <div>
         Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt
@@ -11,6 +16,15 @@ export const Landing = () => {
       <a data-scroll href="#inschrijvingen">
         Inschrijven
       </a>
-    </header>
+    </StHeader>
   );
 };
+
+const StHeader = styled.header`
+  height: 100vh;
+  background-image: url("/retroBG.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff4da;
+`;

@@ -57,7 +57,7 @@ export const SignUps = () => {
                   className="radio"
                   type="radio"
                   name="local"
-                  checked
+                  // checked
                 />
                 nee
               </div>
@@ -75,7 +75,7 @@ export const SignUps = () => {
                   className="radio"
                   type="radio"
                   name="kidCheck"
-                  checked
+                  // checked
                 />
                 nee
               </div>
