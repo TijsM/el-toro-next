@@ -1,13 +1,17 @@
+"use client";
+
+import styled from "styled-components";
+import { H2, H3 } from "../styled-components/Types";
 import { CalendarItem } from "./calendar/CalendarItem";
 
 export const Calendar = () => {
   return (
     <section id="calendar">
-      <h2 className="textGreen">Kalender</h2>
-      <h3>Zondag 4 september</h3>
-      <article>
-        <h3>Kinderkoers</h3>
-        <div className="details">
+      <H2 className="textGreen">Kalender</H2>
+      <StH3>Zondag 4 september</StH3>
+      <StArticle>
+        <StH3>Kinderkoers</StH3>
+        <StDetails>
           <CalendarItem
             time="14u00"
             title="Kinderen t.e.m. 5 jaar"
@@ -29,15 +33,15 @@ export const Calendar = () => {
             description="2 rondes, 1600m"
           />
 
-          <a data-scroll href="#inschrijvingKoers">
+          <StButton data-scroll href="#inschrijvingKoers">
             Inschrijven
-          </a>
-        </div>
-      </article>
+          </StButton>
+        </StDetails>
+      </StArticle>
 
-      <article>
-        <h3>Retrokoers</h3>
-        <div className="details">
+      <StArticle>
+        <StH3>Retrokoers</StH3>
+        <StDetails>
           <CalendarItem
             time="vanaf 13u00"
             title="Inschrijvingen, startblad tekenen, startnummer ontvangen (5 euro)"
@@ -45,11 +49,51 @@ export const Calendar = () => {
           <CalendarItem time="15u30" title="Verkenningsronde en start" />
           <CalendarItem time="17u00" title="Podiumceremonie" />
 
-          <a data-scroll href="#inschrijvingKoers">
+          <StButton data-scroll href="#inschrijvingKoers">
             Inschrijven
-          </a>
-        </div>
-      </article>
+          </StButton>
+        </StDetails>
+      </StArticle>
     </section>
   );
 };
+
+const StH3 = styled(H3)`
+  margin-top: 15px;
+`;
+
+const StArticle = styled.article`
+  margin-left: 50px;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StDetails = styled.div`
+  margin-left: 45px;
+  border-left: solid 2px #065755;
+  padding: 15px;
+  width: 75%;
+`;
+
+const StButton = styled.a`
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin-top: px;
+  text-decoration: none;
+  border: #3d3a34 1px solid;
+  color: #3d3a34;
+  background-color: transparent;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.85em;
+
+  margin-top: 20px;
+`;
