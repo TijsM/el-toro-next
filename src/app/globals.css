@@ -14,12 +14,6 @@ main {
   overflow-x: hidden;
 }
 
-h2 {
-  margin-top: 20px;
-  font-size: 2em;
-  text-align: center;
-}
-
 h3 {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -53,24 +47,6 @@ a {
   border-radius: 5px;
   margin-top: 10px;
   font-size: 0.85em;
-}
-
-header div {
-  padding: 30px;
-  font-weight: 700;
-  max-width: 500px;
-  margin: auto;
-  font-size: 1.2em;
-}
-
-header a {
-  display: inline-block;
-  padding: 10px;
-  margin: auto;
-  font-size: 1.5em;
-  color: #fff4da;
-  border: #fff4da 2px solid;
-  width: 200px;
 }
 
 #calendar {
@@ -408,11 +384,7 @@ header a {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* header h1 {
-    padding-top: 0px;
-    margin-bottom: 0px;
-    font-size: 3em;
-  } */
+
   #calendar {
     overflow: hidden;
     background-size: 1050px;

@@ -10,3 +10,9 @@ export const H1 = styled.h1`
     font-size: 3em;
   }
 `;
+
+export const H2 = styled.h2`
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+`;
