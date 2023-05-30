@@ -49,7 +49,7 @@ a {
   font-size: 0.85em;
 }
 
-#calendar {
+/* #calendar {
   margin: auto;
   margin-top: 50px;
   padding-top: 50px;
@@ -72,7 +72,7 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
+} */
 /* 
 #calendar h3 {
   margin-bottom: -20px;
@@ -124,7 +124,7 @@ a {
   margin-top: 20px;
 } */
 
-#parcours {
+/* #parcours {
   margin-top: 40px;
   display: -ms-grid;
   display: grid;
@@ -136,9 +136,9 @@ a {
   background-size: 30%;
   background-position: 60% 50%;
   justify-items: center;
-}
+} */
 
-#parcours .retroBike1 {
+/* #parcours .retroBike1 {
   width: 400px;
   margin-top: 150px;
   margin-right: 450px;
@@ -147,7 +147,7 @@ a {
 #parcours .parcoursImage {
   width: 500px;
   border-radius: 25px;
-}
+} */
 
 #inschrijvingen #inschrijvingContainer {
   display: -webkit-box;
@@ -324,18 +324,18 @@ a {
 }
 
 @media screen and (max-width: 1200px) {
-  #calendar {
+  /* #calendar {
     width: 85%;
-  }
-  #calendar article {
+  } */
+  /* #calendar article {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-  }
-  #calendar article .details {
+  } */
+  /* #calendar article .details {
     border-left: none;
-  }
+  } */
   #inschrijvingContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -348,10 +348,10 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
-  #calendar {
+  /* #calendar {
     width: 100%;
     background-size: 110%;
-  }
+  } */
   #parcours {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -361,9 +361,9 @@ a {
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  #parcours .retroBike1 {
+  /* #parcours .retroBike1 {
     display: none;
-  }
+  } */
   #parcours .right {
     margin-top: 35px;
     margin: auto;

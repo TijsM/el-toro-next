@@ -6,7 +6,7 @@ import { CalendarItem } from "./calendar/CalendarItem";
 
 export const Calendar = () => {
   return (
-    <section id="calendar">
+    <StSection>
       <H2 className="textGreen">Kalender</H2>
       <StH3>Zondag 4 september</StH3>
       <StArticle>
@@ -54,9 +54,35 @@ export const Calendar = () => {
           </StButton>
         </StDetails>
       </StArticle>
-    </section>
+    </StSection>
   );
 };
+
+const StSection = styled.section`
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 50px;
+  width: 75%;
+  height: 700px;
+  max-width: 1000px;
+  background-image: url("/calendarVector.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    background-size: 110%;
+  }
+`;
 
 const StH3 = styled(H3)`
   margin-top: 15px;
@@ -71,6 +97,10 @@ const StArticle = styled.article`
   width: 75%;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 const StDetails = styled.div`
@@ -78,6 +108,10 @@ const StDetails = styled.div`
   border-left: solid 2px #065755;
   padding: 15px;
   width: 75%;
+
+  @media screen and (max-width: 1200px) {
+    border-left: none;
+  }
 `;
 
 const StButton = styled.a`
