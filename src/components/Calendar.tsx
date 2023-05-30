@@ -82,6 +82,10 @@ const StSection = styled.section`
     width: 100%;
     background-size: 110%;
   }
+  @media screen and (max-width: 700px) {
+    overflow: hidden;
+    background-size: 1050px;
+  }
 `;
 
 const StH3 = styled(H3)`
@@ -101,6 +105,10 @@ const StArticle = styled.article`
   @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
+
+  @media screen and (max-width: 700px) {
+    margin-left: 0px;
+  }
 `;
 
 const StDetails = styled.div`
@@ -111,6 +119,11 @@ const StDetails = styled.div`
 
   @media screen and (max-width: 1200px) {
     border-left: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    margin-left: 0px;
   }
 `;
 
