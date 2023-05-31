@@ -7,16 +7,16 @@ export const Rules = () => {
   return (
     <StSection id="praktisch">
       <H2>Praktisch</H2>
-      <StContent className="praktischContent">
+      <StContent>
         <StContentBlock>
-          <H3 className="textYellow">Bereikbaarheid en parking</H3>
+          <H3>Bereikbaarheid en parking</H3>
           <StContentBlockContent>
             Er zijn parkeermogelijkheden op het parkeerterrein van Hubo en van
             KSC Dikkelvenne. Bekijk zeker ons plannetje op deze website.
           </StContentBlockContent>
         </StContentBlock>
         <StContentBlock>
-          <H3 className="textYellow">Kinderkoers</H3>
+          <H3>Kinderkoers</H3>
           <StContentBlockContent>
             Ook de kinderen worden niet vergeten op de Groote Prijs El Toro. De
             kinder-’koers’ zal hun deel zijn. Ookal zijn hun fietsjes nog niet
@@ -29,7 +29,7 @@ export const Rules = () => {
           </StContentBlockContent>
         </StContentBlock>
         <StContentBlock>
-          <H3 className="textYellow">Reglement</H3>
+          <H3>Reglement</H3>
           <StContentBlockContent>
             <StOl>
               <StLi>
@@ -83,12 +83,23 @@ const StContentBlock = styled.article`
   display: grid;
   grid-template-columns: 25% 75%;
   margin: 30px;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const StContentBlockContent = styled.div`
   padding-left: 30px;
   border-left: #065755 2px solid;
   padding: 10px 50px;
+
+  @media screen and (max-width: 700px) {
+    margin: 0px;
+    margin-top: 10px;
+    border-left: none;
+  }
 `;
 
 const StOl = styled.ol`
