@@ -1,3 +1,7 @@
+"use client";
+
+import styled from "styled-components";
+
 type CalendarItemProps = {
   time: string;
   title: string;
@@ -10,12 +14,25 @@ export const CalendarItem = ({
   title,
 }: CalendarItemProps) => {
   return (
-    <div className="calendarItem">
+    <StContainer>
       <span>{time}</span>
       <div>
         <div>{title}</div>
-        {description && <div className="distance">{description}</div>}
+        {description && (
+          <StDistance className="distance">{description}</StDistance>
+        )}
       </div>
-    </div>
+    </StContainer>
   );
 };
+
+const StContainer = styled.div`
+  display: grid;
+  grid-template-columns: 25% 75%;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+const StDistance = styled.div`
+  font-style: italic;
+`;

@@ -1,33 +1,35 @@
+"use client";
+import styled from "styled-components";
 import Image from "next/image";
+import { H2 } from "../styled-components/Types";
 
 export const Parcours = () => {
   return (
-    <section id="parcours">
-      <div className="left">
-        <h2 id="parcoursHead" className="textYellow">
-          Parcours
-        </h2>
-
-        <div className="retroBike1">
-          <Image
-            src="/retro_bike.png"
-            alt="retro bike"
-            width={500}
-            height={500}
-            style={{ objectFit: "contain" }}
-          />
-        </div>
-      </div>
-      <div className="right">
+    <StSection>
+      <H2 id="parcoursHead" className="textYellow">
+        Parcours
+      </H2>
+      <StImageContainer>
         <Image
           id="plannetje"
           src="/parcours.jpg"
           alt="parcours race"
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           style={{ objectFit: "contain" }}
         />
-      </div>
-    </section>
+      </StImageContainer>
+    </StSection>
   );
 };
+
+const StSection = styled.section`
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
