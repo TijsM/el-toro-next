@@ -6,6 +6,7 @@ import { Parcours } from "../components/Parcours";
 import { SignUps } from "../components/SignUps";
 import { Rules } from "../components/Rules";
 import styled from "styled-components";
+import { breakpoints } from "../constants/breakpoints";
 
 export default function Home() {
   return (
@@ -19,18 +20,6 @@ export default function Home() {
           <Rules />
         </StContent>
       </StMain>
-
-      {/* <div id="popupMessage">message</div> */}
-      {/* 
-      <script
-        type="module"
-        src="https://unpkg.com/rough-notation?module"
-      ></script>
-
-      <script src="./airtable.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
-      <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
-      <script type="module" src="./app.js"></script> */}
     </>
   );
 }
@@ -41,5 +30,18 @@ const StMain = styled.main`
 `;
 
 const StContent = styled.div`
-  padding: 0 200px;
+  padding: 0 400px;
+
+  @media ${breakpoints.big} {
+    /* background-color: green; */
+    padding: 0 124px;
+  }
+  @media ${breakpoints.medium} {
+    /* background-color: red; */
+    padding: 0 64px;
+  }
+  @media ${breakpoints.small} {
+    /* background-color: blue; */
+    padding: 0 8px;
+  }
 `;

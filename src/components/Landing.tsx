@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { H1, H2 } from "../styled-components/Types";
+import { breakpoints } from "../constants/breakpoints";
 
 export const Landing = () => {
   return (
@@ -28,7 +29,7 @@ const StHeader = styled.header`
   text-align: center;
   color: #fff4da;
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     background-color: red;
     display: flex;
     flex-direction: column;

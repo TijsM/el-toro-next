@@ -2,10 +2,11 @@
 
 import styled from "styled-components";
 import { H2, H3 } from "../styled-components/Types";
+import { breakpoints } from "../constants/breakpoints";
 
 export const Rules = () => {
   return (
-    <StSection id="praktisch">
+    <StSection>
       <H2>Praktisch</H2>
       <StContent>
         <StContentBlock>
@@ -84,7 +85,7 @@ const StContentBlock = styled.article`
   grid-template-columns: 25% 75%;
   margin: 30px;
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     display: flex;
     flex-direction: column;
   }
@@ -95,7 +96,7 @@ const StContentBlockContent = styled.div`
   border-left: #065755 2px solid;
   padding: 10px 50px;
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     margin: 0px;
     margin-top: 10px;
     border-left: none;

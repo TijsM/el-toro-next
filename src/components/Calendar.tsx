@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { H2, H3 } from "../styled-components/Types";
 import { CalendarItem } from "./calendar/CalendarItem";
+import { breakpoints } from "../constants/breakpoints";
 
 export const Calendar = () => {
   return (
@@ -59,32 +60,17 @@ export const Calendar = () => {
 };
 
 const StSection = styled.section`
-  margin: auto;
   margin-top: 50px;
   padding-top: 50px;
-  width: 75%;
-  height: 700px;
-  max-width: 1000px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position-x: center;
+  padding-bottom: 50px;
+
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
+
   background-color: #fff4da;
   border-radius: 40px;
-
-  @media screen and (max-width: 1200px) {
-    width: 85%;
-  }
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-  @media screen and (max-width: 700px) {
-    overflow: hidden;
-  }
 `;
 
 const StH3 = styled(H3)`
@@ -101,11 +87,11 @@ const StArticle = styled.article`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 1200px) {
+  @media ${breakpoints.medium} {
     flex-direction: column;
   }
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     margin-left: 0px;
   }
 `;
@@ -116,11 +102,11 @@ const StDetails = styled.div`
   padding: 15px;
   width: 75%;
 
-  @media screen and (max-width: 1200px) {
+  @media ${breakpoints.medium} {
     border-left: none;
   }
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     width: 100%;
     margin-left: 0px;
   }

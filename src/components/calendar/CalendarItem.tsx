@@ -18,9 +18,7 @@ export const CalendarItem = ({
       <span>{time}</span>
       <div>
         <div>{title}</div>
-        {description && (
-          <StDistance className="distance">{description}</StDistance>
-        )}
+        {description && <StDistance>{description}</StDistance>}
       </div>
     </StContainer>
   );
