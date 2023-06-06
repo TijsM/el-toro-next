@@ -32,17 +32,16 @@ const StContent = styled.div`
   margin: 0 400px;
 
   @media screen and (max-width: 1600px) {
-    background-color: green;
+    /* background-color: green; */
     margin: 0 124px;
   }
   @media screen and (max-width: 1200px) {
-    background-color: red;
-
+    /* background-color: red; */
     margin: 0 64px;
   }
 
   @media screen and (max-width: 700px) {
-    background-color: blue;
+    /* background-color: blue; */
     margin: 0 24px;
   }
 `;
