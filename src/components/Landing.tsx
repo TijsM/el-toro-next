@@ -30,7 +30,6 @@ const StHeader = styled.header`
   color: #fff4da;
 
   @media ${breakpoints.small} {
-    background-color: red;
     display: flex;
     flex-direction: column;
     padding-top: 75px;

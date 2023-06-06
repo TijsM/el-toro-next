@@ -35,9 +35,9 @@ export const Calendar = () => {
               description="2 rondes, 1600m"
             />
 
-            {/* <StButton data-scroll href="#inschrijvingKoers">
+            <StButton data-scroll href="#inschrijvingKoers">
               Inschrijven
-            </StButton> */}
+            </StButton>
           </StDetails>
         </StArticle>
 
@@ -72,8 +72,8 @@ const StContent = styled.div`
   align-content: center;
   align-items: center;
 
-  background-color: #fff4da;
-  border-radius: 40px;
+  background-color: ${({ theme }) => theme.colors.yellow};
+  border-radius: ${({ theme }) => theme.borderRadius.default};
 `;
 
 const StH3 = styled(H3)`

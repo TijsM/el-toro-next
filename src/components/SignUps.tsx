@@ -38,13 +38,13 @@ const StInfo = styled.p`
 `;
 
 const StSignUpContainer = styled.div`
-  background-color: #fff4da;
+  background-color: ${({ theme }) => theme.colors.yellow};
   height: 300px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.borderRadius.default};
   margin-top: 48px;
 `;
 
