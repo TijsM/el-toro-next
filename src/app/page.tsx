@@ -19,18 +19,6 @@ export default function Home() {
           <Rules />
         </StContent>
       </StMain>
-
-      {/* <div id="popupMessage">message</div> */}
-      {/* 
-      <script
-        type="module"
-        src="https://unpkg.com/rough-notation?module"
-      ></script>
-
-      <script src="./airtable.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
-      <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
-      <script type="module" src="./app.js"></script> */}
     </>
   );
 }
@@ -42,4 +30,19 @@ const StMain = styled.main`
 
 const StContent = styled.div`
   margin: 0 400px;
+
+  @media screen and (max-width: 1600px) {
+    background-color: green;
+    margin: 0 124px;
+  }
+  @media screen and (max-width: 1200px) {
+    background-color: red;
+
+    margin: 0 64px;
+  }
+
+  @media screen and (max-width: 700px) {
+    background-color: blue;
+    margin: 0 24px;
+  }
 `;

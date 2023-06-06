@@ -6,7 +6,7 @@ import { H2 } from "../styled-components/Types";
 export const Parcours = () => {
   return (
     <StSection>
-      <H2>Parcours</H2>
+      <H2 className="textYellow">Parcours</H2>
       <StImageContainer>
         <Image
           id="plannetje"
@@ -15,7 +15,7 @@ export const Parcours = () => {
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "100%", height: "auto", objectFit: "contain" }} //
+          style={{ width: "100%", height: "auto", objectFit: "contain" }}
         />
       </StImageContainer>
     </StSection>
