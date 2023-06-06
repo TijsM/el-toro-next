@@ -65,7 +65,6 @@ const StSection = styled.section`
   width: 75%;
   height: 700px;
   max-width: 1000px;
-  background-image: url("/calendarVector.svg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -73,6 +72,8 @@ const StSection = styled.section`
   flex-direction: column;
   align-content: center;
   align-items: center;
+  background-color: #fff4da;
+  border-radius: 40px;
 
   @media screen and (max-width: 1200px) {
     width: 85%;
@@ -80,11 +81,9 @@ const StSection = styled.section`
 
   @media screen and (max-width: 1000px) {
     width: 100%;
-    background-size: 110%;
   }
   @media screen and (max-width: 700px) {
     overflow: hidden;
-    background-size: 1050px;
   }
 `;
 
