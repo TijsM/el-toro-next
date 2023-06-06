@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { H2, H3 } from "../styled-components/Types";
 import { CalendarItem } from "./calendar/CalendarItem";
+import { breakpoints } from "../constants/breakpoints";
 
 export const Calendar = () => {
   return (
@@ -86,11 +87,11 @@ const StArticle = styled.article`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 1200px) {
+  @media ${breakpoints.medium} {
     flex-direction: column;
   }
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     margin-left: 0px;
   }
 `;
@@ -101,11 +102,11 @@ const StDetails = styled.div`
   padding: 15px;
   width: 75%;
 
-  @media screen and (max-width: 1200px) {
+  @media ${breakpoints.medium} {
     border-left: none;
   }
 
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     width: 100%;
     margin-left: 0px;
   }

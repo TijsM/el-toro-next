@@ -6,6 +6,7 @@ import { Parcours } from "../components/Parcours";
 import { SignUps } from "../components/SignUps";
 import { Rules } from "../components/Rules";
 import styled from "styled-components";
+import { breakpoints } from "../constants/breakpoints";
 
 export default function Home() {
   return (
@@ -29,19 +30,18 @@ const StMain = styled.main`
 `;
 
 const StContent = styled.div`
-  margin: 0 400px;
+  padding: 0 400px;
 
-  @media screen and (max-width: 1600px) {
+  @media ${breakpoints.big} {
     /* background-color: green; */
-    margin: 0 124px;
+    padding: 0 124px;
   }
-  @media screen and (max-width: 1200px) {
+  @media ${breakpoints.medium} {
     /* background-color: red; */
-    margin: 0 64px;
+    padding: 0 64px;
   }
-
-  @media screen and (max-width: 700px) {
+  @media ${breakpoints.small} {
     /* background-color: blue; */
-    margin: 0 24px;
+    padding: 0 8px;
   }
 `;
