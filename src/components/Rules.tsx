@@ -5,7 +5,7 @@ import { H2, H3 } from "../styled-components/Types";
 
 export const Rules = () => {
   return (
-    <StSection id="praktisch">
+    <StSection>
       <H2>Praktisch</H2>
       <StContent>
         <StContentBlock>

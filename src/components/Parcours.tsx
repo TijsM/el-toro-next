@@ -6,9 +6,7 @@ import { H2 } from "../styled-components/Types";
 export const Parcours = () => {
   return (
     <StSection>
-      <H2 id="parcoursHead" className="textYellow">
-        Parcours
-      </H2>
+      <H2>Parcours</H2>
       <StImageContainer>
         <Image
           id="plannetje"

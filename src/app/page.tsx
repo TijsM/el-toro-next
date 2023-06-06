@@ -42,5 +42,4 @@ const StMain = styled.main`
 
 const StContent = styled.div`
   margin: 0 400px;
-  background-color: red;
 `;

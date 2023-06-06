@@ -41,7 +41,7 @@ const StInfo = styled.p`
 const StSignUpContainer = styled.div`
   background-color: #fff4da;
   height: 300px;
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
