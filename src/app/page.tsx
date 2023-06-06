@@ -41,5 +41,6 @@ const StMain = styled.main`
 `;
 
 const StContent = styled.div`
-  padding: 0 200px;
+  margin: 0 400px;
+  background-color: red;
 `;

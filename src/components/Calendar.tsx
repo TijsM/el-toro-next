@@ -59,32 +59,17 @@ export const Calendar = () => {
 };
 
 const StSection = styled.section`
-  margin: auto;
   margin-top: 50px;
   padding-top: 50px;
-  width: 75%;
-  height: 700px;
-  max-width: 1000px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position-x: center;
+  padding-bottom: 50px;
+
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
+
   background-color: #fff4da;
   border-radius: 40px;
-
-  @media screen and (max-width: 1200px) {
-    width: 85%;
-  }
-
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-  }
-  @media screen and (max-width: 700px) {
-    overflow: hidden;
-  }
 `;
 
 const StH3 = styled(H3)`
