@@ -35,7 +35,6 @@ const StSection = styled.section`
 const StInfo = styled.p`
   color: #fff4da;
   text-align: center;
-  padding-top: 24px;
 `;
 
 const StSignUpContainer = styled.div`
@@ -46,7 +45,7 @@ const StSignUpContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin-top: 100px;
+  margin-top: 48px;
 `;
 
 const StSignUpText = styled.p`

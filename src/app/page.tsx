@@ -14,10 +14,16 @@ export default function Home() {
       <StMain>
         <Landing />
         <StContent>
+          <StSectionSpacing />
+
           <Calendar />
+          <StSectionSpacing />
           <Parcours />
+          <StSectionSpacing />
           <SignUps />
+          <StSectionSpacing />
           <Rules />
+          <StSectionSpacing />
         </StContent>
       </StMain>
     </>
@@ -42,6 +48,10 @@ const StContent = styled.div`
   }
   @media ${breakpoints.small} {
     /* background-color: blue; */
-    padding: 0 8px;
+    padding: 0 16px;
   }
+`;
+
+const StSectionSpacing = styled.div`
+  height: 100px;
 `;

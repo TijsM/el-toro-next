@@ -76,14 +76,13 @@ const StSection = styled.section`
 `;
 
 const StContent = styled.div`
-  max-width: 1100px;
   margin: auto;
 `;
 
 const StContentBlock = styled.article`
   display: grid;
   grid-template-columns: 25% 75%;
-  margin: 30px;
+  margin: 30px 0px;
 
   @media ${breakpoints.small} {
     display: flex;
@@ -100,6 +99,7 @@ const StContentBlockContent = styled.div`
     margin: 0px;
     margin-top: 10px;
     border-left: none;
+    padding: 10px 0px;
   }
 `;
 

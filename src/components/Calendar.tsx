@@ -8,59 +8,62 @@ import { breakpoints } from "../constants/breakpoints";
 export const Calendar = () => {
   return (
     <StSection>
-      <H2 className="textGreen">Kalender</H2>
-      <StH3>Zondag 4 september</StH3>
-      <StArticle>
-        <StH3>Kinderkoers</StH3>
-        <StDetails>
-          <CalendarItem
-            time="14u00"
-            title="Kinderen t.e.m. 5 jaar"
-            description="Rechte lijn van 500m"
-          />
-          <CalendarItem
-            time="14u15"
-            title="6 - 7 jaar"
-            description="1 ronde, 800m"
-          />
-          <CalendarItem
-            time="14u30"
-            title="8 - 9 jaar"
-            description="2 rondes, 1600m"
-          />
-          <CalendarItem
-            time="14u45"
-            title="10 - 11 jaar"
-            description="2 rondes, 1600m"
-          />
+      <H2 className="textYellow">Kalender</H2>
+      <StContent>
+        <StH3 className="textGreen">Zondag 4 september</StH3>
+        <StArticle>
+          <StH3>Kinderkoers</StH3>
+          <StDetails>
+            <CalendarItem
+              time="14u00"
+              title="Kinderen t.e.m. 5 jaar"
+              description="Rechte lijn van 500m"
+            />
+            <CalendarItem
+              time="14u15"
+              title="6 - 7 jaar"
+              description="1 ronde, 800m"
+            />
+            <CalendarItem
+              time="14u30"
+              title="8 - 9 jaar"
+              description="2 rondes, 1600m"
+            />
+            <CalendarItem
+              time="14u45"
+              title="10 - 11 jaar"
+              description="2 rondes, 1600m"
+            />
 
-          <StButton data-scroll href="#inschrijvingKoers">
-            Inschrijven
-          </StButton>
-        </StDetails>
-      </StArticle>
+            {/* <StButton data-scroll href="#inschrijvingKoers">
+              Inschrijven
+            </StButton> */}
+          </StDetails>
+        </StArticle>
 
-      <StArticle>
-        <StH3>Retrokoers</StH3>
-        <StDetails>
-          <CalendarItem
-            time="vanaf 13u00"
-            title="Inschrijvingen, startblad tekenen, startnummer ontvangen (5 euro)"
-          />
-          <CalendarItem time="15u30" title="Verkenningsronde en start" />
-          <CalendarItem time="17u00" title="Podiumceremonie" />
+        <StArticle>
+          <StH3>Retrokoers</StH3>
+          <StDetails>
+            <CalendarItem
+              time="vanaf 13u00"
+              title="Inschrijvingen, startblad tekenen, startnummer ontvangen (5 euro)"
+            />
+            <CalendarItem time="15u30" title="Verkenningsronde en start" />
+            <CalendarItem time="17u00" title="Podiumceremonie" />
 
-          <StButton data-scroll href="#inschrijvingKoers">
-            Inschrijven
-          </StButton>
-        </StDetails>
-      </StArticle>
+            {/* <StButton data-scroll href="#inschrijvingKoers">
+              Inschrijven
+            </StButton> */}
+          </StDetails>
+        </StArticle>
+      </StContent>
     </StSection>
   );
 };
 
-const StSection = styled.section`
-  margin-top: 50px;
+const StSection = styled.section``;
+
+const StContent = styled.div`
   padding-top: 50px;
   padding-bottom: 50px;
 
