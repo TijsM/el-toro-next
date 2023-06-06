@@ -1,21 +1,26 @@
+"use client";
+
 import { Landing } from "../components/Landing";
 import { Calendar } from "../components/Calendar";
 import { Parcours } from "../components/Parcours";
 import { SignUps } from "../components/SignUps";
 import { Rules } from "../components/Rules";
+import styled from "styled-components";
 
 export default function Home() {
   return (
     <>
-      <main>
+      <StMain>
         <Landing />
-        <Calendar />
-        <Parcours />
-        <SignUps />
-        <Rules />
-      </main>
+        <StContent>
+          <Calendar />
+          <Parcours />
+          <SignUps />
+          <Rules />
+        </StContent>
+      </StMain>
 
-      <div id="popupMessage">message</div>
+      {/* <div id="popupMessage">message</div> */}
       {/* 
       <script
         type="module"
@@ -29,3 +34,12 @@ export default function Home() {
     </>
   );
 }
+
+const StMain = styled.main`
+  max-width: 100%;
+  overflow-x: hidden;
+`;
+
+const StContent = styled.div`
+  padding: 0 200px;
+`;
