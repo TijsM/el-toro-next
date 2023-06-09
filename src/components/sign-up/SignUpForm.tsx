@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Input } from "../core";
+import { Button, Input } from "../core";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 import {
@@ -39,6 +39,7 @@ export const SignUpForm = () => {
           />
         );
       })}
+      {/* <Button /> */}
     </StContainer>
   );
 };
