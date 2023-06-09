@@ -12,6 +12,7 @@ export type Particpant = {
 type ParticipantFormProps = {
   participant: Particpant;
   setParticipant: (participant: Particpant) => void;
+  count: number;
 };
 
 export const defaultParticipant: Particpant = {

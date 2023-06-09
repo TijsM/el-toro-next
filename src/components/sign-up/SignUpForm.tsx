@@ -11,8 +11,9 @@ import {
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
 
-  const [participant, setParticipant] =
-    useState<Particpant>(defaultParticipant);
+  const [participants, setParticipants] = useState<Particpant[]>([
+    defaultParticipant,
+  ]);
 
   return (
     <StContainer>
@@ -24,10 +25,20 @@ export const SignUpForm = () => {
           name="email"
         />
       </StGeneralInfoContainer>
-      <ParticipantForm
-        participant={participant}
-        setParticipant={setParticipant}
-      />
+      {participants.map((participant, index) => {
+        return (
+          <ParticipantForm
+            key={"participant" + index}
+            count={index + 1}
+            participant={participant}
+            setParticipant={(updatedParticipant) => {
+              const updatedParticipants = [...participants];
+              updatedParticipants[index] = updatedParticipant;
+              setParticipants(updatedParticipants);
+            }}
+          />
+        );
+      })}
     </StContainer>
   );
 };
