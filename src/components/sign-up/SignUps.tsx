@@ -3,8 +3,12 @@
 import styled from "styled-components";
 import { H2 } from "../../styled-components/Types";
 import { Pricing } from "./Pricing";
+import { useState } from "react";
+import { SignUpForm } from "./SignUpForm";
 
 export const SignUps = () => {
+  const [email, setEmail] = useState("");
+
   return (
     <StSection>
       <H2 className="textYellow">Inschrijven</H2>
@@ -15,9 +19,10 @@ export const SignUps = () => {
         brengen
       </StInfo> */}
       <StSignUpContainer>
-        <StSignUpText>
+        <SignUpForm />
+        {/* <StSignUpText>
           Inschrijvingen voor 2023 zijn nog niet geopend.
-        </StSignUpText>
+        </StSignUpText> */}
       </StSignUpContainer>
     </StSection>
   );
@@ -30,15 +35,10 @@ const StSection = styled.section`
   align-items: center;
 `;
 
-const StInfo = styled.p`
-  color: #fff4da;
-  text-align: center;
-`;
-
 const StSignUpContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.yellow};
-  height: 300px;
   width: 100%;
+  padding: 48px 0px;
   display: flex;
   justify-content: center;
   align-items: center;

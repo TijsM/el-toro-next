@@ -1,6 +1,7 @@
 const colors = {
   green: "#065755",
   yellow: "#fff4da",
+  lightYellow: "#fffaeb",
 };
 
 const borderRadius = {
