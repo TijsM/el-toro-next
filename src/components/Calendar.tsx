@@ -35,9 +35,9 @@ export const Calendar = () => {
               description="2 rondes, 1600m"
             />
 
-            <StButton data-scroll href="#inschrijvingKoers">
+            {/* <StButton data-scroll href="#inschrijvingKoers">
               Inschrijven
-            </StButton>
+            </StButton> */}
           </StDetails>
         </StArticle>
 

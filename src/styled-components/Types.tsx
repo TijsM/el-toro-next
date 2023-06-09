@@ -21,4 +21,5 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   align-self: center;
+  font-size: 1.2em;
 `;

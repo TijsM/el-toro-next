@@ -28,7 +28,7 @@ const StContainer = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 
 const StDistance = styled.div`
