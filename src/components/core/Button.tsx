@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { DefaultTheme, useTheme } from "styled-components";
 
 type ButtonSizes = "medium" | "large";
 
@@ -6,11 +6,12 @@ type ButtonProps = {
   onClick: () => void;
   text: string;
   size: ButtonSizes;
+  inverted?: boolean;
 };
 
-export const Button = ({ onClick, text, size }: ButtonProps) => {
+export const Button = ({ onClick, text, size, inverted }: ButtonProps) => {
   return (
-    <StButton onClick={onClick} size={size}>
+    <StButton onClick={onClick} size={size} inverted={inverted}>
       {text}
     </StButton>
   );
@@ -32,7 +33,18 @@ const getButtonFontSize = (size: ButtonSizes) => {
   }
 };
 
-const StButton = styled.button<{ size: ButtonSizes }>`
+const getButtonColor = (theme: DefaultTheme, inverted?: boolean) => {
+  if (inverted) {
+    return theme.colors.yellow;
+  } else {
+    return theme.colors.dark;
+  }
+};
+
+const StButton = styled.button<{
+  size: ButtonSizes;
+  inverted?: boolean;
+}>`
   display: block;
   text-align: center;
 
@@ -40,8 +52,8 @@ const StButton = styled.button<{ size: ButtonSizes }>`
   font-weight: bold;
 
   border-radius: ${({ theme }) => theme.borderRadius.small};
-  color: ${({ theme }) => theme.colors.yellow};
-  border: ${({ theme }) => theme.colors.yellow} 2px solid;
+  color: ${({ theme, inverted }) => getButtonColor(theme, inverted)};
+  border: ${({ theme, inverted }) => getButtonColor(theme, inverted)} 2px solid;
 
   cursor: pointer;
 

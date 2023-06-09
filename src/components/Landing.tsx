@@ -23,6 +23,7 @@ export const Landing = () => {
         onClick={() => console.log("todo")}
         text="inschrijven"
         size="large"
+        inverted
       />
       {/* </a> */}
     </StHeader>

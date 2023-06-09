@@ -39,7 +39,13 @@ export const SignUpForm = () => {
           />
         );
       })}
-      {/* <Button /> */}
+      <Button
+        onClick={() => {
+          setParticipants([...participants, defaultParticipant]);
+        }}
+        text={"Extra deelnemer toevoegen"}
+        size={"medium"}
+      />
     </StContainer>
   );
 };
