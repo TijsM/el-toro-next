@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { H1, H2 } from "../styled-components/Types";
 import { breakpoints } from "../constants/breakpoints";
+import { Button } from "./core";
 
 export const Landing = () => {
   return (
@@ -14,9 +15,16 @@ export const Landing = () => {
         in retro outfit en waar we van klikpedalen en dikke zanten niet moeten
         weten.
       </StIntroText>
-      <StLink data-scroll href="#inschrijvingen">
+      {/* <StLink data-scroll href="#inschrijvingen">
         Inschrijven
-      </StLink>
+      </StLink> */}
+      {/* <a href="#inschrijvingen"> */}
+      <Button
+        onClick={() => console.log("todo")}
+        text="inschrijven"
+        size="large"
+      />
+      {/* </a> */}
     </StHeader>
   );
 };
@@ -27,7 +35,12 @@ const StHeader = styled.header`
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #fff4da;
+  color: ${({ theme }) => theme.colors.yellow};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 96px;
+  box-sizing: border-box;
 
   @media ${breakpoints.small} {
     display: flex;

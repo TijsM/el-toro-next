@@ -6,6 +6,7 @@ const colors = {
 
 const borderRadius = {
   default: "24px",
+  small: "4px",
 };
 
 const fullTheme = {
