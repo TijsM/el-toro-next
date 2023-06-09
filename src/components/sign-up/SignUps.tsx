@@ -2,20 +2,18 @@
 
 import styled from "styled-components";
 import { H2 } from "../../styled-components/Types";
+import { Pricing } from "./Pricing";
 
 export const SignUps = () => {
   return (
     <StSection>
       <H2 className="textYellow">Inschrijven</H2>
-      <StInfo>
-        Inschrijvingen volwassenen retrokoers: 10 euro <br />
-        Inschrijvingen kinderen retrokoers: 3 euro <br />
-      </StInfo>
+      <Pricing />
 
-      <StInfo>
+      {/* <StInfo>
         Omwille van verzekering dient iedere deelnemer zijn paspoort mee te
         brengen
-      </StInfo>
+      </StInfo> */}
       <StSignUpContainer>
         <StSignUpText>
           Inschrijvingen voor 2023 zijn nog niet geopend.
