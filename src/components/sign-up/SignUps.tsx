@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import { H2 } from "../styled-components/Types";
+import { H2 } from "../../styled-components/Types";
 
 export const SignUps = () => {
   return (

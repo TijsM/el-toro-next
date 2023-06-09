@@ -1,9 +1,9 @@
 "use client";
 
 import { Landing } from "../components/Landing";
-import { Calendar } from "../components/Calendar";
+import { Calendar } from "../components/calendar";
 import { Parcours } from "../components/Parcours";
-import { SignUps } from "../components/SignUps";
+import { SignUps } from "../components/sign-up";
 import { Rules } from "../components/Rules";
 import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";

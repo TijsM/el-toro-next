@@ -1,9 +1,9 @@
 "use client";
 
 import styled from "styled-components";
-import { H2, H3 } from "../styled-components/Types";
-import { CalendarItem } from "./calendar/CalendarItem";
-import { breakpoints } from "../constants/breakpoints";
+import { H2, H3 } from "../../styled-components/Types";
+import { CalendarItem } from "./CalendarItem";
+import { breakpoints } from "../../constants/breakpoints";
 
 export const Calendar = () => {
   return (
