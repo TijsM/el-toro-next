@@ -1,18 +1,43 @@
 import styled from "styled-components";
 
-type InputProps = {
+type BaseInputProps = {
   label: string;
   name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: "text" | "date";
   error?: string;
 };
 
-export const Input = ({ label, name, value, onChange, error }: InputProps) => {
+type StringInputProps = BaseInputProps & {
+  type: "text";
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+type DateInputProps = BaseInputProps & {
+  type: "date";
+  value: Date;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+type InputProps = StringInputProps | DateInputProps;
+
+export const Input = ({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  type = "text",
+}: InputProps) => {
   return (
     <StContainer>
       <StLabel htmlFor={name}>{label}</StLabel>
-      <StInput name={name} value={value} onChange={onChange} />
+      <StInput
+        name={name}
+        value={value.toString()}
+        onChange={onChange}
+        type={type}
+      />
       <StError>{error}</StError>
     </StContainer>
   );
