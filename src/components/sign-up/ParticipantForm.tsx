@@ -7,6 +7,7 @@ export type Particpant = {
   socialSecurityNumber: string;
   placeOfBirth: string;
   city: string;
+  dateOfBirth: Date;
 };
 
 type ParticipantFormProps = {
@@ -20,6 +21,7 @@ export const defaultParticipant: Particpant = {
   socialSecurityNumber: "",
   placeOfBirth: "",
   city: "",
+  dateOfBirth: new Date(),
 };
 
 export const ParticipantForm = ({
@@ -29,11 +31,16 @@ export const ParticipantForm = ({
 }: ParticipantFormProps) => {
   const updateParticipant = (
     propName: keyof Particpant,
-    updatedValue: string
+    updatedValue: string | Date
   ) => {
-    const upadateParticpant = { ...participant };
-    upadateParticpant[propName] = updatedValue;
-    setParticipant(upadateParticpant);
+    const updatedParticipant = { ...participant };
+    if (propName !== "dateOfBirth") {
+      updatedParticipant[propName] = updatedValue as string;
+    } else if (propName === "dateOfBirth") {
+      updatedParticipant[propName] = updatedValue as Date;
+    }
+
+    setParticipant(updatedParticipant);
   };
 
   return (
@@ -41,30 +48,41 @@ export const ParticipantForm = ({
       <StH3>Deelnemer {count}</StH3>
       <StFormItems>
         <Input
+          type="text"
           value={participant.name}
           onChange={(e) => updateParticipant("name", e.target.value)}
-          label={"Name"}
+          label={"Volledige naam"}
           name="name"
         />
         <Input
+          type="text"
           value={participant.socialSecurityNumber}
           onChange={(e) =>
             updateParticipant("socialSecurityNumber", e.target.value)
           }
-          label={"Social Security Number"}
+          label={"Rijksregisternummer"}
           name="socialSecurityNumber"
         />
         <Input
+          type="text"
           value={participant.placeOfBirth}
           onChange={(e) => updateParticipant("placeOfBirth", e.target.value)}
-          label={"Place of Birth"}
+          label={"Geboorteplaats"}
           name="placeOfBirth"
         />
         <Input
+          type="text"
           value={participant.city}
           onChange={(e) => updateParticipant("city", e.target.value)}
-          label={"City"}
+          label={"Woonplaats"}
           name="city"
+        />
+        <Input
+          type="date"
+          value={participant.dateOfBirth}
+          onChange={(e) => updateParticipant("dateOfBirth", e.target.value)}
+          label={"Geboortedatum"}
+          name="dateOfBirth"
         />
       </StFormItems>
     </StParticipantContainer>
