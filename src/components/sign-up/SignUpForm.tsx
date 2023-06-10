@@ -7,6 +7,7 @@ import {
   Particpant,
   defaultParticipant,
 } from "./ParticipantForm";
+import { PriceCalculation } from "./PriceCalculation";
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -64,6 +65,7 @@ export const SignUpForm = () => {
         text={"Extra deelnemer toevoegen"}
         size={"medium"}
       />
+      <PriceCalculation participants={participants} />
     </StContainer>
   );
 };

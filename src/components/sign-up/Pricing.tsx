@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { H3 } from "../../styled-components/Types";
+import { CATEGORIES } from "../../constants/categories";
 
 export const Pricing = () => {
   return (
@@ -7,11 +8,11 @@ export const Pricing = () => {
       <StPricingTitle>Prijslijst:</StPricingTitle>
       <StPriceRow>
         <StPriceText>Volwassenen</StPriceText>
-        <StPriceText>&#8364;10</StPriceText>
+        <StPriceText>&#8364;{CATEGORIES.adult.price}</StPriceText>
       </StPriceRow>
       <StPriceRow>
         <StPriceText>Kinderen</StPriceText>
-        <StPriceText>&#8364;3</StPriceText>
+        <StPriceText>&#8364;{CATEGORIES.child1.price}</StPriceText>
       </StPriceRow>
     </StArticle>
   );
