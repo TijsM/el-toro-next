@@ -1,6 +1,6 @@
 import styled, { DefaultTheme, useTheme } from "styled-components";
 
-type ButtonSizes = "medium" | "large";
+type ButtonSizes = "small" | "medium" | "large";
 
 type ButtonProps = {
   onClick: () => void;
@@ -18,7 +18,9 @@ export const Button = ({ onClick, text, size, inverted }: ButtonProps) => {
 };
 
 const getButtonPadding = (size: ButtonSizes) => {
-  if (size === "medium") {
+  if (size === "small") {
+    return "2px 4px";
+  } else if (size === "medium") {
     return "8px 16px";
   } else if (size === "large") {
     return "16px 24px";
@@ -26,7 +28,9 @@ const getButtonPadding = (size: ButtonSizes) => {
 };
 
 const getButtonFontSize = (size: ButtonSizes) => {
-  if (size === "medium") {
+  if (size === "small") {
+    return "0.6em";
+  } else if (size === "medium") {
     return "0.7em";
   } else if (size === "large") {
     return "1.2em";

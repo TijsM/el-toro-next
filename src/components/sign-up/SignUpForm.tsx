@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, Input } from "../core";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
@@ -15,6 +15,24 @@ export const SignUpForm = () => {
     defaultParticipant,
   ]);
 
+  const addParticipant = useCallback(
+    (updatedParticipant: Particpant, index: number) => {
+      const updatedParticipants = [...participants];
+      updatedParticipants[index] = updatedParticipant;
+      setParticipants(updatedParticipants);
+    },
+    [participants]
+  );
+
+  const deleteParticipant = useCallback(
+    (index: number) => {
+      const updatedParticipants = [...participants];
+      updatedParticipants.splice(index, 1);
+      setParticipants(updatedParticipants);
+    },
+    [participants]
+  );
+
   return (
     <StContainer>
       <StGeneralInfoContainer>
@@ -23,6 +41,7 @@ export const SignUpForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           label={"Email"}
           name="email"
+          type="text"
         />
       </StGeneralInfoContainer>
       {participants.map((participant, index) => {
@@ -32,10 +51,9 @@ export const SignUpForm = () => {
             count={index + 1}
             participant={participant}
             setParticipant={(updatedParticipant) => {
-              const updatedParticipants = [...participants];
-              updatedParticipants[index] = updatedParticipant;
-              setParticipants(updatedParticipants);
+              addParticipant(updatedParticipant, index);
             }}
+            deleteParticipant={() => deleteParticipant(index)}
           />
         );
       })}
