@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Input } from "../core";
+import { Button, Input } from "../core";
 import { H3 } from "../../styled-components/Types";
 
 export type Particpant = {
@@ -12,8 +12,9 @@ export type Particpant = {
 
 type ParticipantFormProps = {
   participant: Particpant;
-  setParticipant: (participant: Particpant) => void;
   count: number;
+  setParticipant: (participant: Particpant) => void;
+  deleteParticipant: () => void;
 };
 
 export const defaultParticipant: Particpant = {
@@ -26,8 +27,9 @@ export const defaultParticipant: Particpant = {
 
 export const ParticipantForm = ({
   participant,
-  setParticipant,
   count,
+  setParticipant,
+  deleteParticipant,
 }: ParticipantFormProps) => {
   const updateParticipant = (
     propName: keyof Particpant,
@@ -45,7 +47,16 @@ export const ParticipantForm = ({
 
   return (
     <StParticipantContainer>
-      <StH3>Deelnemer {count}</StH3>
+      <StHeaderRow>
+        <StH3>Deelnemer {count}</StH3>
+        {count > 1 && (
+          <Button
+            onClick={deleteParticipant}
+            text={"verwijder deelnamer"}
+            size={"small"}
+          />
+        )}
+      </StHeaderRow>
       <StFormItems>
         <Input
           type="text"
@@ -89,12 +100,18 @@ export const ParticipantForm = ({
   );
 };
 
-const StFormItems = styled.div``;
-
-const StParticipantContainer = styled.div`
-  padding-bottom: 48px;
+const StHeaderRow = styled.div`
+  display: flex;
+  align-items: baseline;
 `;
 
 const StH3 = styled(H3)`
   margin-bottom: 24px;
+  margin-right: 24px;
+`;
+
+const StFormItems = styled.div``;
+
+const StParticipantContainer = styled.div`
+  padding-bottom: 48px;
 `;
