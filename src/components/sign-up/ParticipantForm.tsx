@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import { Button, Input } from "../core";
 import { H3 } from "../../styled-components/Types";
-
-export type Particpant = {
-  name: string;
-  socialSecurityNumber: string;
-  placeOfBirth: string;
-  city: string;
-  dateOfBirth: Date;
-};
+import { Particpant } from "../../types/Participant";
 
 type ParticipantFormProps = {
   participant: Particpant;

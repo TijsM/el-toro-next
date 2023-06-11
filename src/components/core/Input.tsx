@@ -9,13 +9,13 @@ type BaseInputProps = {
 
 type StringInputProps = BaseInputProps & {
   type: "text";
-  value: string;
+  value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 type DateInputProps = BaseInputProps & {
   type: "date";
-  value: Date;
+  value?: Date;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -34,7 +34,7 @@ export const Input = ({
       <StLabel htmlFor={name}>{label}</StLabel>
       <StInput
         name={name}
-        value={value.toString()}
+        value={value?.toString()}
         onChange={onChange}
         type={type}
       />
