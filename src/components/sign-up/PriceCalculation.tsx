@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { Particpant } from "./ParticipantForm";
 import dayjs from "dayjs";
 import {
   CATEGORIES,
@@ -8,6 +7,7 @@ import {
 } from "../../constants/categories";
 import { H3 } from "../../styled-components/Types";
 import styled from "styled-components";
+import { Particpant } from "../../types/Participant";
 
 type PriceCalculationProps = {
   participants: Particpant[];
