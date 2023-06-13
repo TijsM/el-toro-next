@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Button, Input } from "../core";
 import { H3 } from "../../styled-components/Types";
-import { Particpant } from "../../types/Participant";
+import { Particpant, participantIsValid } from "../../types/Participant";
+import { useMemo, useState } from "react";
+import { Li, Ul } from "../core/List";
 
 type ParticipantFormProps = {
   participant: Particpant;
@@ -24,6 +26,8 @@ export const ParticipantForm = ({
   setParticipant,
   deleteParticipant,
 }: ParticipantFormProps) => {
+  const [lostFocusOnForm, setLostFocusOnForm] = useState(false);
+
   const updateParticipant = (
     propName: keyof Particpant,
     updatedValue: string | Date
@@ -38,6 +42,10 @@ export const ParticipantForm = ({
     setParticipant(updatedParticipant);
   };
 
+  const errors = useMemo(() => {
+    return participantIsValid(participant);
+  }, [participant]);
+
   return (
     <StParticipantContainer>
       <StHeaderRow>
@@ -50,7 +58,11 @@ export const ParticipantForm = ({
           />
         )}
       </StHeaderRow>
-      <StFormItems>
+      <StFormItems
+        onBlur={() => {
+          setLostFocusOnForm(true);
+        }}
+      >
         <Input
           type="text"
           value={participant.name}
@@ -89,6 +101,18 @@ export const ParticipantForm = ({
           name="dateOfBirth"
         />
       </StFormItems>
+      {lostFocusOnForm && !errors.valid && (
+        <StErrors>
+          <p>Vul alle velden juist in:</p>
+          <StUl>
+            {errors.errors.map((error: string, index: number) => (
+              <Li key={error} index={index}>
+                {error}
+              </Li>
+            ))}
+          </StUl>
+        </StErrors>
+      )}
     </StParticipantContainer>
   );
 };
@@ -103,8 +127,14 @@ const StH3 = styled(H3)`
   margin-right: 24px;
 `;
 
-const StFormItems = styled.div``;
+const StFormItems = styled.form``;
 
 const StParticipantContainer = styled.div`
   padding-bottom: 48px;
 `;
+
+const StErrors = styled.div`
+  color: ${({ theme }) => theme.colors.red};
+`;
+
+const StUl = styled(Ul)``;

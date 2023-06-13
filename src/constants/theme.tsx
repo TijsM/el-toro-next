@@ -3,6 +3,7 @@ const colors = {
   yellow: "#fff4da",
   lightYellow: "#fffaeb",
   dark: "#3d3a34",
+  red: "#ff4800",
 };
 
 const borderRadius = {
