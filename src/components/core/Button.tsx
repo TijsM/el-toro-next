@@ -7,11 +7,23 @@ type ButtonProps = {
   text: string;
   size: ButtonSizes;
   inverted?: boolean;
+  disabled?: boolean;
 };
 
-export const Button = ({ onClick, text, size, inverted }: ButtonProps) => {
+export const Button = ({
+  onClick,
+  text,
+  size,
+  inverted,
+  disabled,
+}: ButtonProps) => {
   return (
-    <StButton onClick={onClick} size={size} inverted={inverted}>
+    <StButton
+      onClick={onClick}
+      size={size}
+      inverted={inverted}
+      disabled={disabled}
+    >
       {text}
     </StButton>
   );
@@ -48,12 +60,15 @@ const getButtonColor = (theme: DefaultTheme, inverted?: boolean) => {
 const StButton = styled.button<{
   size: ButtonSizes;
   inverted?: boolean;
+  disabled?: boolean;
 }>`
   display: block;
   text-align: center;
 
   background-color: transparent;
   font-weight: bold;
+
+  opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
 
   border-radius: ${({ theme }) => theme.borderRadius.small};
   color: ${({ theme, inverted }) => getButtonColor(theme, inverted)};

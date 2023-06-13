@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import dayjs from "dayjs";
-import {
-  CATEGORIES,
-  CategoryNames,
-  Category,
-} from "../../constants/categories";
+import { CATEGORIES } from "../../constants/categories";
 import { H3 } from "../../styled-components/Types";
 import styled from "styled-components";
-import { Particpant, participantIsValid } from "../../types/Participant";
+import { Particpant } from "../../types/Participant";
 import { Button } from "../core";
+import {
+  allParticipantsAreValid,
+  participantIsValid,
+} from "../../schema/Participant";
 
 type PriceCalculationProps = {
   participants: Particpant[];
@@ -85,6 +85,7 @@ export const PriceCalculation = ({ participants }: PriceCalculationProps) => {
 
       <StPaymentButtonContainer>
         <Button
+          disabled={!allParticipantsAreValid(participants)}
           onClick={() => {
             alert(
               "Open betaling voor" +
