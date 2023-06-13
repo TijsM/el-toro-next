@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Button, Input } from "../core";
 import { H3 } from "../../styled-components/Types";
-import { Particpant, participantIsValid } from "../../types/Participant";
+import { Particpant } from "../../types/Participant";
 import { useMemo, useState } from "react";
 import { Li, Ul } from "../core/List";
+import { participantIsValid } from "../../schema/Participant";
 
 type ParticipantFormProps = {
   participant: Particpant;
