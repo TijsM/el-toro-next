@@ -8,6 +8,7 @@ import {
 import { H3 } from "../../styled-components/Types";
 import styled from "styled-components";
 import { Particpant, participantIsValid } from "../../types/Participant";
+import { Button } from "../core";
 
 type PriceCalculationProps = {
   participants: Particpant[];
@@ -81,6 +82,21 @@ export const PriceCalculation = ({ participants }: PriceCalculationProps) => {
           </StPrice>
         </StPriceDetailContainer>
       </StPriceRow>
+
+      <StPaymentButtonContainer>
+        <Button
+          onClick={() => {
+            alert(
+              "Open betaling voor" +
+                pricing.children.priceTotal +
+                pricing.adults.priceTotal +
+                "euro"
+            );
+          }}
+          text={"Ga naar betaling"}
+          size={"medium"}
+        />
+      </StPaymentButtonContainer>
     </StContainer>
   );
 };
@@ -113,4 +129,10 @@ const StLine = styled.div`
   height: 1px;
   width: 100%;
   background-color: black;
+`;
+
+const StPaymentButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
 `;

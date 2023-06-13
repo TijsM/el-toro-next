@@ -2,12 +2,9 @@ import { useCallback, useState } from "react";
 import { Button, Input } from "../core";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
-import {
-  ParticipantForm,
-  Particpant,
-  defaultParticipant,
-} from "./ParticipantForm";
+import { ParticipantForm, defaultParticipant } from "./ParticipantForm";
 import { PriceCalculation } from "./PriceCalculation";
+import { Particpant } from "../../types/Participant";
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
