@@ -7,7 +7,7 @@ import {
 } from "../../constants/categories";
 import { H3 } from "../../styled-components/Types";
 import styled from "styled-components";
-import { Particpant } from "../../types/Participant";
+import { Particpant, participantIsValid } from "../../types/Participant";
 
 type PriceCalculationProps = {
   participants: Particpant[];
@@ -15,15 +15,17 @@ type PriceCalculationProps = {
 
 export const PriceCalculation = ({ participants }: PriceCalculationProps) => {
   const pricing = useMemo(() => {
-    const selectedCategories = participants.map((participant) => {
-      const age = dayjs().diff(participant.dateOfBirth, "years");
+    const selectedCategories = participants
+      .filter((participant) => participantIsValid(participant).valid)
+      .map((participant) => {
+        const age = dayjs().diff(participant.dateOfBirth, "years");
 
-      const category = Object.values(CATEGORIES).find((categoryInfo) => {
-        return age >= categoryInfo.minAge && age <= categoryInfo.maxAge;
+        const category = Object.values(CATEGORIES).find((categoryInfo) => {
+          return age >= categoryInfo.minAge && age <= categoryInfo.maxAge;
+        });
+
+        return category;
       });
-
-      return category;
-    });
 
     const adultsAmount = selectedCategories.filter(
       (cat) => !cat?.isChild
@@ -72,7 +74,7 @@ export const PriceCalculation = ({ participants }: PriceCalculationProps) => {
       )}
       <StLine />
       <StPriceRow>
-        <StPriceDescription>Kinderen</StPriceDescription>
+        <StPriceDescription>Totaal</StPriceDescription>
         <StPriceDetailContainer>
           <StPrice>
             &#8364;{pricing.children.priceTotal + pricing.adults.priceTotal}
