@@ -9,7 +9,7 @@ export const Landing = () => {
   return (
     <StHeader>
       <H1>Retro Grote Prijs El Toro</H1>
-      <H2>September 2023</H2>
+      <H2>3 September 2023</H2>
       <StIntroText>
         Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt
         in retro outfit en waar we van klikpedalen en dikke zanten niet moeten
