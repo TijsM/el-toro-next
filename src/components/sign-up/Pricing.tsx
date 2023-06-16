@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { H3 } from "../../styled-components/Types";
-import { CATEGORIES } from "../../constants/categories";
+import { CATEGORIES, DEPOSIT_PRICE } from "../../constants/categories";
 
 export const Pricing = () => {
   return (
@@ -13,6 +13,10 @@ export const Pricing = () => {
       <StPriceRow>
         <StPriceText>Kinderen</StPriceText>
         <StPriceText>&#8364;{CATEGORIES.child1.price}</StPriceText>
+      </StPriceRow>
+      <StPriceRow>
+        <StPriceText>Waarborg, te betalen ter plaatse</StPriceText>
+        <StPriceText>(&#8364;{DEPOSIT_PRICE})</StPriceText>
       </StPriceRow>
     </StArticle>
   );
@@ -36,4 +40,5 @@ const StPriceRow = styled.div`
 
 const StPriceText = styled.p`
   color: ${({ theme }) => theme.colors.yellow};
+  padding-right: 48px;
 `;

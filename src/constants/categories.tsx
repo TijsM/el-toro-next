@@ -13,6 +13,7 @@ export type Categories = {
 
 const CHILD_PRICE = 3;
 const ADULT_PRICE = 10;
+export const DEPOSIT_PRICE = 5;
 
 export const CATEGORIES: Categories = {
   child1: {
