@@ -34,10 +34,6 @@ export const Calendar = () => {
               title="10 - 11 jaar"
               description="2 rondes, 1600m"
             />
-
-            {/* <StButton data-scroll href="#inschrijvingKoers">
-              Inschrijven
-            </StButton> */}
           </StDetails>
         </StArticle>
 
