@@ -10,22 +10,20 @@ import { breakpoints } from "../constants/breakpoints";
 
 export default function Home() {
   return (
-    <>
-      <StMain>
-        <Landing />
-        <StContent>
-          <StSectionSpacing />
-          <Calendar />
-          <StSectionSpacing />
-          <Parcours />
-          <StSectionSpacing />
-          <SignUps />
-          <StSectionSpacing />
-          <Rules />
-          <StSectionSpacing />
-        </StContent>
-      </StMain>
-    </>
+    <StMain>
+      <Landing />
+      <StContent>
+        <StSectionSpacing />
+        <Calendar />
+        <StSectionSpacing />
+        <Parcours />
+        <StSectionSpacing />
+        <SignUps />
+        <StSectionSpacing />
+        <Rules />
+        <StSectionSpacing />
+      </StContent>
+    </StMain>
   );
 }
 
