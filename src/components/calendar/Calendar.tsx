@@ -46,10 +46,6 @@ export const Calendar = () => {
             />
             <CalendarItem time="15u30" title="Verkenningsronde en start" />
             <CalendarItem time="17u00" title="Podiumceremonie" />
-
-            {/* <StButton data-scroll href="#inschrijvingKoers">
-              Inschrijven
-            </StButton> */}
           </StDetails>
         </StArticle>
         <StInfo>
