@@ -3,12 +3,9 @@
 import styled from "styled-components";
 import { H2 } from "../../styled-components/Types";
 import { Pricing } from "./Pricing";
-import { useState } from "react";
 import { SignUpForm } from "./SignUpForm";
 
 export const SignUps = () => {
-  const [email, setEmail] = useState("");
-
   return (
     <StSection>
       <H2 className="textYellow">Inschrijven</H2>
@@ -37,9 +34,4 @@ const StSignUpContainer = styled.div`
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.default};
   margin-top: 48px;
-`;
-
-const StSignUpText = styled.p`
-  text-align: center;
-  padding-top: 24px;
 `;

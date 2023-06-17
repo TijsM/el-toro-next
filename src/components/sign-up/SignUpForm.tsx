@@ -8,6 +8,7 @@ import { Particpant } from "../../types/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
 import { usePricing } from "../../hooks/usePricing";
 
+
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
 
