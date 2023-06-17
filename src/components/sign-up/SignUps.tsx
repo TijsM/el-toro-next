@@ -14,15 +14,8 @@ export const SignUps = () => {
       <H2 className="textYellow">Inschrijven</H2>
       <Pricing />
 
-      {/* <StInfo>
-        Omwille van verzekering dient iedere deelnemer zijn paspoort mee te
-        brengen
-      </StInfo> */}
       <StSignUpContainer>
         <SignUpForm />
-        {/* <StSignUpText>
-          Inschrijvingen voor 2023 zijn nog niet geopend.
-        </StSignUpText> */}
       </StSignUpContainer>
     </StSection>
   );

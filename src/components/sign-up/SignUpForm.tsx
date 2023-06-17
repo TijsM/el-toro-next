@@ -5,6 +5,8 @@ import { breakpoints } from "../../constants/breakpoints";
 import { ParticipantForm, defaultParticipant } from "./ParticipantForm";
 import { PriceCalculation } from "./PriceCalculation";
 import { Particpant } from "../../types/Participant";
+import { allParticipantsAreValid } from "../../schema/Participant";
+import { usePricing } from "../../hooks/usePricing";
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -12,6 +14,8 @@ export const SignUpForm = () => {
   const [participants, setParticipants] = useState<Particpant[]>([
     defaultParticipant,
   ]);
+
+  const { pricing } = usePricing(participants);
 
   const addParticipant = useCallback(
     (updatedParticipant: Particpant, index: number) => {
@@ -63,6 +67,20 @@ export const SignUpForm = () => {
         size={"medium"}
       />
       <PriceCalculation participants={participants} />
+      <StPaymentButtonContainer>
+        <Button
+          disabled={!allParticipantsAreValid(participants)}
+          onClick={() => {
+            alert(
+              "Open betaling voor " +
+                (pricing.children.priceTotal + pricing.adults.priceTotal) +
+                " euro"
+            );
+          }}
+          text={"Ga naar betaling"}
+          size={"medium"}
+        />
+      </StPaymentButtonContainer>
     </StContainer>
   );
 };
@@ -88,4 +106,10 @@ const StContainer = styled.div`
 
 const StGeneralInfoContainer = styled.div`
   padding-bottom: 48px;
+`;
+
+const StPaymentButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
 `;
