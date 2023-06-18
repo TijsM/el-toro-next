@@ -8,10 +8,16 @@ import { Particpant } from "../../types/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
 import { usePricing } from "../../hooks/usePricing";
 import { useStripe } from "../../hooks/useStripe";
+import useSWR from "swr";
+import { fetcher } from "../../utils/fetcher";
 
 // https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
 
 export const SignUpForm = () => {
+  const { data, error, isLoading } = useSWR("/stripe", fetcher);
+
+  console.log(data);
+
   const [email, setEmail] = useState("");
 
   const [participants, setParticipants] = useState<Particpant[]>([
