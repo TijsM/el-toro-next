@@ -18,8 +18,6 @@ export const useStripe = () => {
       return;
     }
 
-    return;
-
     const stripe = await getStripe();
     const { error } = await stripe!.redirectToCheckout({
       sessionId: sessionId,
