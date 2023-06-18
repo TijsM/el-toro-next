@@ -1,33 +1,24 @@
-import useSWR from "swr";
-import { fetcher } from "../utils/fetcher";
-import { useState } from "react";
 import { GetStripeCheckoutSessionResponse } from "../app/stripe/types";
 import getStripe from "../utils/get-stripe";
 import axios from "axios";
+import { Particpant } from "../types/Participant";
 
 export const useStripe = () => {
-  const [shouldGetStipeCheckoutId, setShouldGetStipeCheckoutId] =
-    useState(false);
+  const openStripeCheckout = async (participants: Particpant[]) => {
+    const getSessionIdResponse =
+      await axios.post<GetStripeCheckoutSessionResponse>(
+        "/stripe",
+        participants
+      );
 
-  const { data } = useSWR<GetStripeCheckoutSessionResponse>(
-    !shouldGetStipeCheckoutId ? null : "/stripe",
-    fetcher
-  );
-
-  const openStripeCheckout = async () => {
-    setShouldGetStipeCheckoutId(true);
-
-    const response = await axios.get<GetStripeCheckoutSessionResponse>(
-      "/stripe"
-    );
-    console.log("res", response.data.id);
-
-    const sessionId = response.data.id;
+    const sessionId = getSessionIdResponse.data.id;
 
     if (!sessionId) {
       console.error("No sessionId");
       return;
     }
+
+    return;
 
     const stripe = await getStripe();
     const { error } = await stripe!.redirectToCheckout({
