@@ -74,7 +74,7 @@ export const SignUpForm = () => {
       <StPaymentButtonContainer>
         <Button
           disabled={!allParticipantsAreValid(participants)}
-          onClick={() => openStripeCheckout()}
+          onClick={() => openStripeCheckout(participants)}
           text={"Ga naar betaling"}
           size={"medium"}
         />
