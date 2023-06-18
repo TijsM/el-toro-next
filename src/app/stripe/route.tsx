@@ -1,6 +1,7 @@
 import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { GetStripeCheckoutSessionResponse } from "./types";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2022-11-15",
@@ -28,7 +29,7 @@ export async function GET(req: NextApiRequest, res: NextResponse) {
   const checkoutSession: Stripe.Checkout.Session =
     await stripe.checkout.sessions.create(params);
 
-  return NextResponse.json({
-    id: checkoutSession.id,
-  });
+  const response: GetStripeCheckoutSessionResponse = checkoutSession;
+
+  return NextResponse.json(response);
 }
