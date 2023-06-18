@@ -7,7 +7,9 @@ import { PriceCalculation } from "./PriceCalculation";
 import { Particpant } from "../../types/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
 import { usePricing } from "../../hooks/usePricing";
+import { useStripe } from "../../hooks/useStripe";
 
+// https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -17,6 +19,7 @@ export const SignUpForm = () => {
   ]);
 
   const { pricing } = usePricing(participants);
+  const { openStripeCheckout } = useStripe();
 
   const addParticipant = useCallback(
     (updatedParticipant: Particpant, index: number) => {
@@ -71,13 +74,7 @@ export const SignUpForm = () => {
       <StPaymentButtonContainer>
         <Button
           disabled={!allParticipantsAreValid(participants)}
-          onClick={() => {
-            alert(
-              "Open betaling voor " +
-                (pricing.children.priceTotal + pricing.adults.priceTotal) +
-                " euro"
-            );
-          }}
+          onClick={() => openStripeCheckout()}
           text={"Ga naar betaling"}
           size={"medium"}
         />
