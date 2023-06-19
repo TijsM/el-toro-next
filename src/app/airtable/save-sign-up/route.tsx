@@ -3,12 +3,12 @@ import Airtable from "airtable";
 import { Particpant } from "../../../schema/Participant";
 import dayjs from "dayjs";
 
-var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEU }).base(
-  process.env.AIRTABLE_BASE_ID as string
-);
-
 export async function POST(req: NextRequest) {
   const { participants, email } = await req.json();
+
+  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEU }).base(
+    process.env.AIRTABLE_BASE_ID as string
+  );
 
   const fields = participants.map((participant: Particpant) => {
     return {
@@ -23,32 +23,6 @@ export async function POST(req: NextRequest) {
     };
   });
 
-  const fields2 = [
-    {
-      fields: {
-        Naam: "Tijs",
-        Email: "tijs.martens.tijs@gmail.com",
-        Geboortedatum: "1999-06-14",
-        Woonplaats: "Nazareth",
-        Geboorteplaats: "Gent",
-        Rijksregister: "SDFSDF",
-      },
-    },
-    {
-      fields: {
-        Naam: "Tijs",
-        Email: "tijs.martens.tijs@gmail.com",
-        Geboortedatum: "1999-06-14",
-        Woonplaats: "Nazareth",
-        Geboorteplaats: "Gent",
-        Rijksregister: "SDFSDF",
-      },
-    },
-  ];
-
-  console.log(fields);
-
-  // base("Inschrijvingen 2023").create(fields
   base("Inschrijvingen 2023").create(fields, function (err: any, records: any) {
     if (err) {
       console.error(err);
