@@ -11,7 +11,17 @@ import { breakpoints } from "../constants/breakpoints";
 export default function Home() {
   return (
     <StMain>
-      <Landing />
+      <Landing
+        title={"Retro Grote Prijs El Toro"}
+        subtitle={"3 September 2023"}
+        body={
+          "Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
+        }
+        cta={{
+          text: "Inschrijven",
+          onClick: () => console.log("todo"),
+        }}
+      />
       <StContent>
         <StSectionSpacing />
         <Calendar />
