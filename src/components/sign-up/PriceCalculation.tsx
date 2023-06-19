@@ -1,8 +1,8 @@
 import { H3 } from "../../styled-components/Types";
 import styled from "styled-components";
-import { Particpant } from "../../types/Participant";
 
 import { usePricing } from "../../hooks/usePricing";
+import { Particpant } from "../../schema/Participant";
 
 type PriceCalculationProps = {
   participants: Particpant[];

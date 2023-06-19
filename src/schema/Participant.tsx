@@ -1,11 +1,22 @@
 import { object, string, date } from "yup";
-import { Particpant } from "../types/Participant";
+
+export type Particpant = {
+  name?: string;
+  socialSecurityNumber?: string;
+  placeOfBirth?: string;
+  city?: string;
+  dateOfBirth?: Date;
+};
 
 export const ParticipantSchema = object({
   name: string().required("Volledige naam moet ingevuld zijn"),
-  socialSecurityNumber: string().required(
-    "Rijksregisternummer moet ingevuld zijn"
-  ),
+  socialSecurityNumber: string()
+    .required("Rijksregisternummer moet ingevuld zijn")
+    .matches(
+      /^[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{2}[.\- ]{0,1}[0-9]{3}[.\- ]{0,1}[0-9]{2}$/,
+      "Rijksregisternummer moet geldig zijn"
+    ),
+
   placeOfBirth: string().required("Geboorteplaats moet ingevuld zijn"),
   city: string().required("Woonplaats moet ingevuld zijn"),
   dateOfBirth: date()
