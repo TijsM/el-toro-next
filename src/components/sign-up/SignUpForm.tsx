@@ -6,10 +6,7 @@ import { ParticipantForm, defaultParticipant } from "./ParticipantForm";
 import { PriceCalculation } from "./PriceCalculation";
 import { Particpant } from "../../types/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
-import { usePricing } from "../../hooks/usePricing";
 import { useStripe } from "../../hooks/useStripe";
-import { useRouter } from "next/router";
-import { useSearchParams } from "next/navigation";
 import { getParticipantsFromUrl } from "../../utils/getParticipantsFromUrl";
 
 // https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
@@ -56,7 +53,8 @@ export const SignUpForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           label={"Email"}
           name="email"
-          type="text"
+          type="email"
+          required
         />
       </StGeneralInfoContainer>
       {participants.map((participant, index) => {
@@ -82,7 +80,7 @@ export const SignUpForm = () => {
       <PriceCalculation participants={participants} />
       <StPaymentButtonContainer>
         <Button
-          disabled={!allParticipantsAreValid(participants)}
+          disabled={!allParticipantsAreValid(participants) || !email}
           onClick={() => openStripeCheckout(participants)}
           text={"Ga naar betaling"}
           size={"medium"}

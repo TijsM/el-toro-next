@@ -3,12 +3,13 @@ import styled from "styled-components";
 type BaseInputProps = {
   label: string;
   name: string;
-  type?: "text" | "date";
+  type?: "text" | "date" | "email";
   error?: string;
+  required?: boolean;
 };
 
 type StringInputProps = BaseInputProps & {
-  type: "text";
+  type: "text" | "email";
   value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
@@ -27,16 +28,18 @@ export const Input = ({
   value,
   onChange,
   error,
+  required,
   type = "text",
 }: InputProps) => {
   return (
     <StContainer>
-      <StLabel htmlFor={name}>{label}</StLabel>
+      <StLabel htmlFor={name}>{required ? label + " *" : label}</StLabel>
       <StInput
         name={name}
         value={value?.toString()}
         onChange={onChange}
         type={type}
+        required={required}
       />
       <StError>{error}</StError>
     </StContainer>
