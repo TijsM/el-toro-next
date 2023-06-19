@@ -4,12 +4,15 @@ import axios from "axios";
 import { Particpant } from "../types/Participant";
 
 export const useStripe = () => {
-  const openStripeCheckout = async (participants: Particpant[]) => {
+  const openStripeCheckout = async (
+    participants: Particpant[],
+    email: string
+  ) => {
     const getSessionIdResponse =
-      await axios.post<GetStripeCheckoutSessionResponse>(
-        "/stripe",
-        participants
-      );
+      await axios.post<GetStripeCheckoutSessionResponse>("/stripe", {
+        participants,
+        email,
+      });
 
     const sessionId = getSessionIdResponse.data.id;
 
