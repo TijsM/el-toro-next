@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
-import { Button, Input } from "../core";
+import { Button } from "../core";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 import { ParticipantForm, defaultParticipant } from "./ParticipantForm";
 import { PriceCalculation } from "./PriceCalculation";
-import { Particpant } from "../../types/Participant";
+import { Particpant } from "../../schema/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
 import { useStripe } from "../../hooks/useStripe";
 import { getParticipantsFromUrl } from "../../utils/getParticipantsFromUrl";
+import { MandatoryInfoForm } from "./MandatoryInfoForm";
 
 // https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
 
@@ -50,16 +51,7 @@ export const SignUpForm = () => {
 
   return (
     <StContainer>
-      <StGeneralInfoContainer>
-        <Input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          label={"Email"}
-          name="email"
-          type="email"
-          required
-        />
-      </StGeneralInfoContainer>
+      <MandatoryInfoForm email={email} setEmail={setEmail} />
       {participants.map((participant, index) => {
         return (
           <ParticipantForm
@@ -111,10 +103,6 @@ const StContainer = styled.div`
     /* background-color: blue; */
     padding: 0 16px;
   }
-`;
-
-const StGeneralInfoContainer = styled.div`
-  padding-bottom: 48px;
 `;
 
 const StPaymentButtonContainer = styled.div`

@@ -1,7 +1,7 @@
 import { GetStripeCheckoutSessionResponse } from "../app/stripe/types";
 import getStripe from "../utils/get-stripe";
 import axios from "axios";
-import { Particpant } from "../types/Participant";
+import { Particpant } from "../schema/Participant";
 import { useState } from "react";
 
 export const useStripe = () => {

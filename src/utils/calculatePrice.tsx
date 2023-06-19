@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { participantIsValid } from "../schema/Participant";
 import { CATEGORIES } from "../constants/categories";
-import { Particpant } from "../types/Participant";
+import { Particpant } from "../schema/Participant";
 
 export const calculatePrice = (participants: Particpant[]) => {
   const selectedCategories = participants

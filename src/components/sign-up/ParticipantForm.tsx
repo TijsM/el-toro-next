@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Button, Input } from "../core";
 import { H3 } from "../../styled-components/Types";
-import { Particpant } from "../../types/Participant";
 import { useMemo, useState } from "react";
 import { Li, Ul } from "../core/List";
-import { participantIsValid } from "../../schema/Participant";
+import { Particpant, participantIsValid } from "../../schema/Participant";
+import { ErrorList } from "../core/ErrorList";
 
 type ParticipantFormProps = {
   participant: Particpant;
@@ -107,18 +107,7 @@ export const ParticipantForm = ({
           required
         />
       </StFormItems>
-      {lostFocusOnForm && !errors.valid && (
-        <StErrors>
-          <p>Vul alle velden juist in:</p>
-          <StUl>
-            {errors.errors.map((error: string, index: number) => (
-              <Li key={error} index={index}>
-                {error}
-              </Li>
-            ))}
-          </StUl>
-        </StErrors>
-      )}
+      {lostFocusOnForm && !errors.valid && <ErrorList errors={errors.errors} />}
     </StParticipantContainer>
   );
 };
