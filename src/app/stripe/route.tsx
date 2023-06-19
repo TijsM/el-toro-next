@@ -8,7 +8,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_TEST_KEY!, {
 });
 
 export async function POST(req: NextRequest) {
-  const participants = await req.json();
+  const { participants, email } = await req.json();
 
   const price = calculatePrice(participants);
 
@@ -32,9 +32,10 @@ export async function POST(req: NextRequest) {
     locale: "nl",
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
+    customer_email: email,
     success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `http://localhost:3000?participants=${encodeURIComponent(
-      JSON.stringify(participants)
+      JSON.stringify({ participants, email })
     )}`,
   };
 

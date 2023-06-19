@@ -5,17 +5,20 @@ export const getParticipantsFromUrl = () => {
   const parsedUrl = new URL(url);
 
   // Get the value of the "participants" parameter
-  const participantFromUrl = parsedUrl.searchParams.get("participants");
+  const dataFromUrl = parsedUrl.searchParams.get("participants");
 
-  if (!participantFromUrl) {
+  if (!dataFromUrl) {
     return undefined;
   }
 
   // Decode the URL-encoded value
-  const decodedParticipants = decodeURIComponent(participantFromUrl);
+  const decodedParticipants = decodeURIComponent(dataFromUrl);
 
   // Parse the JSON data
-  const participants = JSON.parse(decodedParticipants);
+  const jsonData = JSON.parse(decodedParticipants);
 
-  return participants;
+  const participants = jsonData.participants;
+  const email = jsonData.email;
+
+  return { participants, email };
 };

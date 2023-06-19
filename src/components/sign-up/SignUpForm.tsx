@@ -22,8 +22,11 @@ export const SignUpForm = () => {
 
   useEffect(() => {
     const participantsFromUrl = getParticipantsFromUrl();
-    if (participantsFromUrl) {
-      setParticipants(participantsFromUrl);
+    if (participantsFromUrl?.participants) {
+      setParticipants(participantsFromUrl.participants);
+    }
+    if (participantsFromUrl?.email) {
+      setEmail(participantsFromUrl.email);
     }
   }, []);
 
@@ -81,7 +84,7 @@ export const SignUpForm = () => {
       <StPaymentButtonContainer>
         <Button
           disabled={!allParticipantsAreValid(participants) || !email}
-          onClick={() => openStripeCheckout(participants)}
+          onClick={() => openStripeCheckout(participants, email)}
           text={"Ga naar betaling"}
           size={"medium"}
         />
