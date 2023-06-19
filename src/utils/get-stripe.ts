@@ -1,10 +1,11 @@
 import { Stripe, loadStripe } from '@stripe/stripe-js';
+import { STRIPE_PUBLISHABLE_KEY } from '../constants/stripeKeys';
 
 let stripePromise: Promise<Stripe | null>;
 
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_TEST_KEY!);
+    stripePromise = loadStripe(STRIPE_PUBLISHABLE_KEY!);
   }
   return stripePromise;
 };

@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { GetStripeCheckoutSessionResponse } from "./types";
 import { calculatePrice } from "../../utils/calculatePrice";
+import { STRIPE_SECRET_KEY } from "../../constants/stripeKeys";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_TEST_KEY!, {
+const stripe = new Stripe(STRIPE_SECRET_KEY!, {
   apiVersion: "2022-11-15",
 });
 
