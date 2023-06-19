@@ -70,6 +70,7 @@ export const ParticipantForm = ({
           onChange={(e) => updateParticipant("name", e.target.value)}
           label={"Volledige naam"}
           name="name"
+          required
         />
         <Input
           type="text"
@@ -79,6 +80,7 @@ export const ParticipantForm = ({
           }
           label={"Rijksregisternummer"}
           name="socialSecurityNumber"
+          required
         />
         <Input
           type="text"
@@ -86,6 +88,7 @@ export const ParticipantForm = ({
           onChange={(e) => updateParticipant("placeOfBirth", e.target.value)}
           label={"Geboorteplaats"}
           name="placeOfBirth"
+          required
         />
         <Input
           type="text"
@@ -93,6 +96,7 @@ export const ParticipantForm = ({
           onChange={(e) => updateParticipant("city", e.target.value)}
           label={"Woonplaats"}
           name="city"
+          required
         />
         <Input
           type="date"
@@ -100,6 +104,7 @@ export const ParticipantForm = ({
           onChange={(e) => updateParticipant("dateOfBirth", e.target.value)}
           label={"Geboortedatum"}
           name="dateOfBirth"
+          required
         />
       </StFormItems>
       {lostFocusOnForm && !errors.valid && (
