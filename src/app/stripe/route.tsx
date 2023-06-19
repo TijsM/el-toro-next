@@ -32,8 +32,10 @@ export async function POST(req: NextRequest) {
     locale: "nl",
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
-    success_url: `http://localhost:3000/result?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `http://localhost:3000/donate-with-checkout`,
+    success_url: `http://localhost:3000?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `http://localhost:3000?participants=${encodeURIComponent(
+      JSON.stringify(participants)
+    )}`,
   };
 
   const checkoutSession: Stripe.Checkout.Session =

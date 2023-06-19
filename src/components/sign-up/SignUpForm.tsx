@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Input } from "../core";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
@@ -8,6 +8,9 @@ import { Particpant } from "../../types/Participant";
 import { allParticipantsAreValid } from "../../schema/Participant";
 import { usePricing } from "../../hooks/usePricing";
 import { useStripe } from "../../hooks/useStripe";
+import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+import { getParticipantsFromUrl } from "../../utils/getParticipantsFromUrl";
 
 // https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
 
@@ -18,8 +21,14 @@ export const SignUpForm = () => {
     defaultParticipant,
   ]);
 
-  const { pricing } = usePricing(participants);
   const { openStripeCheckout } = useStripe();
+
+  useEffect(() => {
+    const participantsFromUrl = getParticipantsFromUrl();
+    if (participantsFromUrl) {
+      setParticipants(participantsFromUrl);
+    }
+  }, []);
 
   const addParticipant = useCallback(
     (updatedParticipant: Particpant, index: number) => {
