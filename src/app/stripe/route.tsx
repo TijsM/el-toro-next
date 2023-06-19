@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { GetStripeCheckoutSessionResponse } from "./types";
 import { calculatePrice } from "../../utils/calculatePrice";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_TEST_KEY!, {
   apiVersion: "2022-11-15",
 });
 
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     locale: "nl",
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
-    success_url: `http://localhost:3000?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `http://localhost:3000?participants=${encodeURIComponent(
       JSON.stringify(participants)
     )}`,

@@ -5,27 +5,28 @@ import { H1, H2 } from "../styled-components/Types";
 import { breakpoints } from "../constants/breakpoints";
 import { Button } from "./core";
 
-export const Landing = () => {
+type LandingProps = {
+  title: string;
+  subtitle: string;
+  body?: string;
+  cta: {
+    text: string;
+    onClick: () => void;
+  };
+};
+
+export const Landing = ({ title, subtitle, body, cta }: LandingProps) => {
   return (
     <StHeader>
-      <H1>Retro Grote Prijs El Toro</H1>
-      <H2>3 September 2023</H2>
-      <StIntroText>
-        Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt
-        in retro outfit en waar we van klikpedalen en dikke zanten niet moeten
-        weten.
-      </StIntroText>
-      {/* <StLink data-scroll href="#inschrijvingen">
-        Inschrijven
-      </StLink> */}
-      {/* <a href="#inschrijvingen"> */}
+      <H1>{title}</H1>
+      <H2>{subtitle}</H2>
+      {body && <StIntroText>{body}</StIntroText>}
       <Button
-        onClick={() => console.log("todo")}
-        text="inschrijven"
+        onClick={() => cta.onClick()}
+        text={cta.text}
         size="large"
         inverted
       />
-      {/* </a> */}
     </StHeader>
   );
 };
