@@ -15,29 +15,25 @@ export const Calendar = () => {
           <StH3>Kinderkoers</StH3>
           <StDetails>
             <CalendarItem
-              time="14u00"
+              time="14u00*"
               title="Kinderen t.e.m. 5 jaar"
               description="Rechte lijn van 500m"
             />
             <CalendarItem
-              time="14u15"
+              time="14u15*"
               title="6 - 7 jaar"
               description="1 ronde, 800m"
             />
             <CalendarItem
-              time="14u30"
+              time="14u30*"
               title="8 - 9 jaar"
               description="2 rondes, 1600m"
             />
             <CalendarItem
-              time="14u45"
+              time="14u45*"
               title="10 - 11 jaar"
               description="2 rondes, 1600m"
             />
-
-            {/* <StButton data-scroll href="#inschrijvingKoers">
-              Inschrijven
-            </StButton> */}
           </StDetails>
         </StArticle>
 
@@ -50,12 +46,13 @@ export const Calendar = () => {
             />
             <CalendarItem time="15u30" title="Verkenningsronde en start" />
             <CalendarItem time="17u00" title="Podiumceremonie" />
-
-            {/* <StButton data-scroll href="#inschrijvingKoers">
-              Inschrijven
-            </StButton> */}
           </StDetails>
         </StArticle>
+        <StInfo>
+          * Voor de kinderkoersen vragen we aan de kinderen én ouders om zeker
+          een half uur op voorhand aanwezig te zijn zodat de inschrijving vlot
+          kan verlopen.
+        </StInfo>
       </StContent>
     </StSection>
   );
@@ -115,20 +112,13 @@ const StDetails = styled.div`
   }
 `;
 
-const StButton = styled.a`
-  display: block;
-  width: 100px;
-  text-align: center;
-  margin-top: px;
-  text-decoration: none;
-  border: #3d3a34 1px solid;
-  color: #3d3a34;
-  background-color: transparent;
-  padding: 5px;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 10px;
+const StInfo = styled.div`
+  color: ${({ theme }) => theme.colors.dark};
+  width: 75%;
+  padding-top: 48px;
   font-size: 0.85em;
 
-  margin-top: 20px;
+  @media ${breakpoints.medium} {
+    width: 80%;
+  }
 `;
