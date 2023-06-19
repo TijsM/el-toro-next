@@ -8,7 +8,7 @@ export default function Success() {
   return (
     <Landing
       title={"Bedankt voor je inschriving!"}
-      subtitle={"To op 3 September"}
+      subtitle={"Tot op zondag 3 September"}
       cta={{
         text: "Terug naar de website",
         onClick: () => router.push("/"),

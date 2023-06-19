@@ -18,7 +18,7 @@ export const SignUpForm = () => {
     defaultParticipant,
   ]);
 
-  const { openStripeCheckout } = useStripe();
+  const { openStripeCheckout, loading } = useStripe();
 
   useEffect(() => {
     const participantsFromUrl = getParticipantsFromUrl();
@@ -83,6 +83,7 @@ export const SignUpForm = () => {
       <PriceCalculation participants={participants} />
       <StPaymentButtonContainer>
         <Button
+          loading={loading}
           disabled={!allParticipantsAreValid(participants) || !email}
           onClick={() => openStripeCheckout(participants, email)}
           text={"Ga naar betaling"}

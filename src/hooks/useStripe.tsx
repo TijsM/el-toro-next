@@ -2,17 +2,22 @@ import { GetStripeCheckoutSessionResponse } from "../app/stripe/types";
 import getStripe from "../utils/get-stripe";
 import axios from "axios";
 import { Particpant } from "../types/Participant";
+import { useState } from "react";
 
 export const useStripe = () => {
+  const [loading, setLoading] = useState(false);
+
   const openStripeCheckout = async (
     participants: Particpant[],
     email: string
   ) => {
+    setLoading(true);
     const getSessionIdResponse =
       await axios.post<GetStripeCheckoutSessionResponse>("/stripe", {
         participants,
         email,
       });
+    setLoading(false);
 
     const sessionId = getSessionIdResponse.data.id;
 
@@ -31,5 +36,5 @@ export const useStripe = () => {
     console.warn(error.message);
   };
 
-  return { openStripeCheckout };
+  return { openStripeCheckout, loading };
 };

@@ -8,6 +8,7 @@ type ButtonProps = {
   size: ButtonSizes;
   inverted?: boolean;
   disabled?: boolean;
+  loading?: boolean;
 };
 
 export const Button = ({
@@ -16,6 +17,7 @@ export const Button = ({
   size,
   inverted,
   disabled,
+  loading,
 }: ButtonProps) => {
   return (
     <StButton
@@ -24,7 +26,7 @@ export const Button = ({
       inverted={inverted}
       disabled={disabled}
     >
-      {text}
+      {loading ? "Laden..." : text}
     </StButton>
   );
 };
