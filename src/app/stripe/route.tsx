@@ -34,7 +34,9 @@ export async function POST(req: NextRequest) {
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
     customer_email: email,
-    success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}&participants=${encodeURIComponent(
+      JSON.stringify({ participants, email })
+    )}`,
     cancel_url: `http://localhost:3000?participants=${encodeURIComponent(
       JSON.stringify({ participants, email })
     )}`,
