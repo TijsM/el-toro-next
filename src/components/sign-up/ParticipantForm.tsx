@@ -54,7 +54,7 @@ export const ParticipantForm = ({
         {count > 1 && (
           <Button
             onClick={deleteParticipant}
-            text={"verwijder deelnamer"}
+            text={"verwijder deelnemer"}
             size={"small"}
           />
         )}

@@ -25,6 +25,7 @@ export async function POST(req: NextRequest) {
 
   base("Inschrijvingen 2023").create(fields, function (err: any, records: any) {
     if (err) {
+      console.log("error");
       console.error(err);
       return;
     }
