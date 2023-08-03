@@ -21,22 +21,6 @@ section {
   color: #fff4da;
 }
 
-button,
-a {
-  display: block;
-  width: 100px;
-  text-align: center;
-  text-decoration: none;
-  border: #3d3a34 1px solid;
-  color: #3d3a34;
-  background-color: transparent;
-  padding: 5px;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 10px;
-  font-size: 0.85em;
-}
-
 @media screen and (max-width: 700px) {
   #parcours .parcoursImage {
     width: 100vw;
