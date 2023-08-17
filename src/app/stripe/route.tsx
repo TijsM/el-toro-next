@@ -9,7 +9,7 @@ const stripe = new Stripe(STRIPE_SECRET_KEY!, {
 });
 
 export async function POST(req: NextRequest) {
-  const { participants, email } = await req.json();
+  const { participants, email, origin } = await req.json();
 
   const price = calculatePrice(participants);
 
@@ -28,16 +28,17 @@ export async function POST(req: NextRequest) {
     };
   });
 
+
   const params: Stripe.Checkout.SessionCreateParams = {
     line_items: lineItems,
     locale: "nl",
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
     customer_email: email,
-    success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}&participants=${encodeURIComponent(
+    success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&participants=${encodeURIComponent(
       JSON.stringify({ participants, email })
     )}`,
-    cancel_url: `http://localhost:3000?participants=${encodeURIComponent(
+    cancel_url: `${origin}?participants=${encodeURIComponent(
       JSON.stringify({ participants, email })
     )}`,
   };

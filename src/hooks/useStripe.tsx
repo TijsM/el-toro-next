@@ -16,6 +16,7 @@ export const useStripe = () => {
       await axios.post<GetStripeCheckoutSessionResponse>("/stripe", {
         participants,
         email,
+        origin: window.location.origin,
       });
     setLoading(false);
 

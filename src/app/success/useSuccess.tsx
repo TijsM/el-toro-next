@@ -7,8 +7,6 @@ export const useSuccess = () => {
     const storeInAirtable = async () => {
       const participantsFromUrl = getParticipantsFromUrl();
 
-      console.log(participantsFromUrl);
-
       if (!participantsFromUrl) {
         return;
       }
@@ -17,8 +15,6 @@ export const useSuccess = () => {
         participants: participantsFromUrl.participants,
         email: participantsFromUrl.email,
       });
-
-      console.log(response);
     };
 
     storeInAirtable();
