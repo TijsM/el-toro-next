@@ -5,6 +5,7 @@ import axios from "axios";
 export const useSuccess = () => {
   useEffect(() => {
     const storeInAirtable = async () => {
+      console.log("start storing in airtable");
       const participantsFromUrl = getParticipantsFromUrl();
 
       if (!participantsFromUrl) {
@@ -15,6 +16,8 @@ export const useSuccess = () => {
         participants: participantsFromUrl.participants,
         email: participantsFromUrl.email,
       });
+
+      console.log("end storing in airtable", response);
     };
 
     storeInAirtable();
