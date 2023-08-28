@@ -1,11 +1,7 @@
-import Airtable from "airtable";
 import { NextRequest, NextResponse } from "next/server";
 import { Particpant } from "../../../schema/Participant";
 import dayjs from "dayjs";
-
-const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEU }).base(
-  process.env.AIRTABLE_BASE_ID as string
-);
+import axios from "axios";
 
 export async function GET(req: NextRequest) {
   const url = await req.url;
@@ -34,14 +30,22 @@ export async function GET(req: NextRequest) {
     };
   });
 
-  base("Inschrijvingen 2023").create(fields, function (err: any, records: any) {
-    if (err) {
-      console.log("error");
-      console.error(err);
-    } else {
-      console.log("saved the participants");
-    }
-  });
+  const headers = {
+    Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+    "Content-Type": "application/json",
+  };
+
+  const airtableUrl =
+    "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202023";
+
+  axios
+    .post(airtableUrl, { records: fields }, { headers: headers })
+    .then((response) => {
+      console.log("Success:", response.data);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 
   return NextResponse.redirect(origin);
 }
