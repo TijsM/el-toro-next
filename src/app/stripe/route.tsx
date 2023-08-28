@@ -28,14 +28,13 @@ export async function POST(req: NextRequest) {
     };
   });
 
-
   const params: Stripe.Checkout.SessionCreateParams = {
     line_items: lineItems,
     locale: "nl",
     payment_method_types: ["bancontact", "card"],
     mode: "payment",
     customer_email: email,
-    success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&participants=${encodeURIComponent(
+    success_url: `${origin}/success/confirm?participants=${encodeURIComponent(
       JSON.stringify({ participants, email })
     )}`,
     cancel_url: `${origin}?participants=${encodeURIComponent(

@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 import Airtable from "airtable";
+import { NextRequest, NextResponse } from "next/server";
 import { Particpant } from "../../../schema/Participant";
 import dayjs from "dayjs";
 
@@ -7,9 +7,19 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEU }).base(
   process.env.AIRTABLE_BASE_ID as string
 );
 
-export async function POST(req: NextRequest) {
-  const { participants, email } = await req.json();
-  console.log({ participants, email });
+export async function GET(req: NextRequest) {
+  const url = await req.url;
+
+  const decodedUrl = decodeURIComponent(url);
+  const urlObj = new URL(decodedUrl);
+
+  const queryString = decodedUrl.split("?")[1];
+  const queryParams = new URLSearchParams(queryString);
+  const json = queryParams.get("participants");
+  const participantsJson = JSON.parse(json as string);
+
+  const { participants, email } = participantsJson;
+  const origin = urlObj.origin;
 
   const fields = participants.map((participant: Particpant) => {
     return {
@@ -24,8 +34,6 @@ export async function POST(req: NextRequest) {
     };
   });
 
-  console.log("fields", fields);
-
   base("Inschrijvingen 2023").create(fields, function (err: any, records: any) {
     if (err) {
       console.log("error");
@@ -35,7 +43,5 @@ export async function POST(req: NextRequest) {
     }
   });
 
-  return NextResponse.json({
-    success: true,
-  });
+  return NextResponse.redirect(origin);
 }
