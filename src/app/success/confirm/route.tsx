@@ -38,13 +38,15 @@ export async function GET(req: NextRequest) {
   const airtableUrl =
     "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202023";
 
-  axios
+  await axios
     .post(airtableUrl, { records: fields }, { headers: headers })
     .then((response) => {
       console.log("Success:", response.data);
+      return NextResponse.redirect(origin);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.log("Error:", error, new Date());
+      return NextResponse.json({ error });
     });
 
   return NextResponse.redirect(origin);
