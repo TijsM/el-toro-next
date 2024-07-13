@@ -13,7 +13,7 @@ export default function Home() {
     <StMain>
       <Landing
         title={"Retro Grote Prijs El Toro"}
-        subtitle={"3 September 2023"}
+        subtitle={"1 September 2024"}
         body={
           "Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
         }

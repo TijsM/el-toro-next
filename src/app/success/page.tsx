@@ -2,7 +2,6 @@
 
 import { Landing } from "../../components/Landing";
 import { useRouter } from "next/navigation";
-import { getParticipantsFromUrl } from "../../utils/getParticipantsFromUrl";
 import { useSuccess } from "./useSuccess";
 
 export default function Success() {
@@ -13,7 +12,7 @@ export default function Success() {
   return (
     <Landing
       title={"Bedankt voor je inschriving!"}
-      subtitle={"Tot op zondag 3 September"}
+      subtitle={"Tot op zondag 1 September"}
       cta={{
         text: "Terug naar de website",
         onClick: () => router.push("/"),
