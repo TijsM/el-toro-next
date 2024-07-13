@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
       fields: {
         Naam: participant.name,
         Email: email,
-        Geboortedatum: dayjs(participant.dateOfBirth).format("DD/MM/YYYY"),
+        Geboortedatum: dayjs(participant.dateOfBirth).format("YYYY-MM-DD"),
         Woonplaats: participant.city,
         Geboorteplaats: participant.placeOfBirth,
         Rijksregister: participant.socialSecurityNumber,
@@ -31,12 +31,11 @@ export async function GET(req: NextRequest) {
   });
 
   const headers = {
-    Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-    "Content-Type": "application/json",
+    Authorization: `Bearer ${process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN}`,
   };
 
   const airtableUrl =
-    "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202023";
+    "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202024";
 
   await axios
     .post(airtableUrl, { records: fields }, { headers: headers })
