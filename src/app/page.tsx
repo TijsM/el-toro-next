@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";
 
 export default function Home() {
-  const element = document.getElementById("sign-up");
+  const element = document?.getElementById?.("sign-up");
 
   return (
     <StMain>
