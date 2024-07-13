@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";
 
 export default function Home() {
+  const element = document.getElementById("sign-up");
+
   return (
     <StMain>
       <Landing
@@ -18,8 +20,8 @@ export default function Home() {
           "Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
         }
         cta={{
-          text: "Inschrijven",
-          onClick: () => console.log("todo"),
+          text: "Inschrijven voor 10e editie",
+          onClick: () => element?.scrollIntoView({ behavior: "smooth" }),
         }}
       />
       <StContent>

@@ -7,7 +7,7 @@ import { SignUpForm } from "./SignUpForm";
 
 export const SignUps = () => {
   return (
-    <StSection>
+    <StSection id="sign-up">
       <H2 className="textYellow">Inschrijven</H2>
       <Pricing />
 
