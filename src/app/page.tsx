@@ -7,9 +7,15 @@ import { SignUps } from "../components/sign-up";
 import { Rules } from "../components/Rules";
 import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";
+import { useMounted } from "@/hooks/useMounted";
 
 export default function Home() {
-  const element = document?.getElementById?.("sign-up");
+  const mounted = useMounted();
+  let element: HTMLElement | null = null;
+
+  if (mounted) {
+    element = document?.getElementById?.("sign-up");
+  }
 
   return (
     <StMain>
