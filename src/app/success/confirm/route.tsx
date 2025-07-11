@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
   };
 
   const airtableUrl =
-    "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202024";
+    "https://api.airtable.com/v0/app1OzpZLbfIvdOUS/Inschrijvingen%202025";
 
   await axios
     .post(airtableUrl, { records: fields }, { headers: headers })

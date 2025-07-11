@@ -10,7 +10,7 @@ export const Calendar = () => {
     <StSection>
       <H2 className="textYellow">Kalender</H2>
       <StContent>
-        <StH3 className="textGreen">1 September 2024</StH3>
+        <StH3 className="textGreen">7 September 2025</StH3>
         <StArticle>
           <StH3>Kinderkoers</StH3>
           <StDetails>

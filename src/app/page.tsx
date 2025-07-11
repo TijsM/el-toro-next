@@ -21,12 +21,12 @@ export default function Home() {
     <StMain>
       <Landing
         title={"Retro Grote Prijs El Toro"}
-        subtitle={"1 September 2024"}
+        subtitle={"7 September 2025"}
         body={
           "Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
         }
         cta={{
-          text: "Inschrijven voor 10e editie",
+          text: "Inschrijven voor 11e editie",
           onClick: () => element?.scrollIntoView({ behavior: "smooth" }),
         }}
       />
