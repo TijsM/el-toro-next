@@ -11,41 +11,54 @@ export const Calendar = () => {
       <H2 className="textYellow">Kalender</H2>
       <StContent>
         <StH3 className="textGreen">7 September 2025</StH3>
+
         <StArticle>
           <StH3>Kinderkoers</StH3>
           <StDetails>
             <CalendarItem
+              time="13u30*"
+              title="Kinderen 1-5 jaar"
+              description="Rechte lijn, … meter"
+            />
+            <CalendarItem
+              time="13u40*"
+              title="Kinderen 6-7 jaar"
+              description="1 kleine ronde, … meter"
+            />
+            <CalendarItem
+              time="13u50*"
+              title="Kinderen 8-9 jaar"
+              description="2 kleine rondes, … meter"
+            />
+            <CalendarItem
               time="14u00*"
-              title="Kinderen t.e.m. 5 jaar"
-              description="Rechte lijn van 500m"
+              title="Kinderen 10-11 jaar"
+              description="3 kleine rondes, … meter"
             />
+            <CalendarItem time="14u20" title="Prijsuitreiking" />
+          </StDetails>
+        </StArticle>
+
+        <StArticle>
+          <StH3>Sympatieke El Toro</StH3>
+          <StDetails>
             <CalendarItem
-              time="14u15*"
-              title="6 - 7 jaar"
-              description="1 ronde, 800m"
-            />
-            <CalendarItem
-              time="14u30*"
-              title="8 - 9 jaar"
-              description="2 rondes, 1600m"
-            />
-            <CalendarItem
-              time="14u45*"
-              title="10 - 11 jaar"
-              description="2 rondes, 1600m"
+              time="14u45"
+              title="Start"
+              description="Ludieke & Vrouwenkoers - 3 kleine verkenningsrondes, 12 kleine rondes koers, met finish beneden"
             />
           </StDetails>
         </StArticle>
 
         <StArticle>
-          <StH3>Retrokoers</StH3>
+          <StH3>Retro El Toro Koers</StH3>
           <StDetails>
             <CalendarItem
-              time="vanaf 13u00"
-              title="Inschrijvingen, startblad tekenen, startnummer ontvangen (5 euro)"
+              time="16u00"
+              title="Start"
+              description="1 verkenningsronde beneden, 15 rondes koers, finish boven op de Rotse"
             />
-            <CalendarItem time="15u30" title="Verkenningsronde en start" />
-            <CalendarItem time="17u00" title="Podiumceremonie" />
+            <CalendarItem time="17u15" title="Prijsuitreiking Retro Koers" />
           </StDetails>
         </StArticle>
         <StInfo>
@@ -80,15 +93,15 @@ const StH3 = styled(H3)`
 const StArticle = styled.article`
   margin-left: 50px;
   margin-top: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 75%;
-  justify-content: center;
-  align-items: center;
+
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  align-items: start;
+  grid-column-gap: 20px;
 
   @media ${breakpoints.medium} {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   @media ${breakpoints.small} {
@@ -97,18 +110,13 @@ const StArticle = styled.article`
 `;
 
 const StDetails = styled.div`
-  margin-left: 45px;
   border-left: solid 2px #065755;
   padding: 15px;
-  width: 75%;
+  width: 100%;
 
   @media ${breakpoints.medium} {
     border-left: none;
-  }
-
-  @media ${breakpoints.small} {
-    width: 100%;
-    margin-left: 0px;
+    padding-left: 0;
   }
 `;
 

@@ -32,5 +32,6 @@ const StContainer = styled.div`
 `;
 
 const StDistance = styled.div`
+  margin-top: 4px;
   font-style: italic;
 `;
