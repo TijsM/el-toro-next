@@ -8,7 +8,8 @@ import { SignUpForm } from "./SignUpForm";
 export const SignUps = () => {
   return (
     <StSection id="sign-up">
-      <H2 className="textYellow">Inschrijven</H2>
+      <StTitle className="textYellow">Inschrijven</StTitle>
+
       <Pricing />
 
       <StSignUpContainer>
@@ -34,4 +35,8 @@ const StSignUpContainer = styled.div`
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.default};
   margin-top: 48px;
+`;
+
+const StTitle = styled(H2)`
+  margin-bottom: 48px;
 `;
