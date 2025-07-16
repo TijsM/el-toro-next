@@ -14,7 +14,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   margin-top: 20px;
-  font-size: 2em;
+  font-size: 2.5em;
   text-align: center;
   margin-bottom: 24px;
 `;

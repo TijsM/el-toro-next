@@ -64,22 +64,18 @@ export default function Home() {
 
 const StMain = styled.main`
   max-width: 100%;
-  overflow-x: hidden;
 `;
 
 const StContent = styled.div`
   padding: 0 400px;
 
   @media ${breakpoints.big} {
-    /* background-color: green; */
     padding: 0 124px;
   }
   @media ${breakpoints.medium} {
-    /* background-color: red; */
     padding: 0 64px;
   }
   @media ${breakpoints.small} {
-    /* background-color: blue; */
     padding: 0 16px;
   }
 `;

@@ -74,6 +74,7 @@ export const Calendar = () => {
 const StSection = styled.section``;
 
 const StContent = styled.div`
+  margin-top: 48px;
   padding-top: 50px;
   padding-bottom: 50px;
 
