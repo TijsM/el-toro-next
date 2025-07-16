@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { H1, H2 } from "../styled-components/Types";
 import { breakpoints } from "../constants/breakpoints";
 import { Button } from "./core";
+import FadeInOnScroll from "./FadeInOnScroll";
 
 type LandingProps = {
   title: string;
   subtitle: string;
-  body?: string;
+  body: string;
   cta: {
     text: string;
     onClick: () => void;
@@ -18,15 +19,23 @@ type LandingProps = {
 export const Landing = ({ title, subtitle, body, cta }: LandingProps) => {
   return (
     <StHeader>
-      <H1>{title}</H1>
-      <H2>{subtitle}</H2>
-      {body && <StIntroText>{body}</StIntroText>}
-      <Button
-        onClick={() => cta.onClick()}
-        text={cta.text}
-        size="large"
-        inverted
-      />
+      <FadeInOnScroll>
+        <H1>{title}</H1>
+      </FadeInOnScroll>
+      <FadeInOnScroll delay={200}>
+        <H2>{subtitle}</H2>
+      </FadeInOnScroll>
+      <FadeInOnScroll delay={400}>
+        <StIntroText>{body}</StIntroText>
+      </FadeInOnScroll>
+      <FadeInOnScroll delay={600}>
+        <Button
+          onClick={() => cta.onClick()}
+          text={cta.text}
+          size="large"
+          inverted
+        />
+      </FadeInOnScroll>
     </StHeader>
   );
 };

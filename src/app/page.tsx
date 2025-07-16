@@ -8,6 +8,7 @@ import { Rules } from "../components/Rules";
 import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";
 import { useMounted } from "@/hooks/useMounted";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 export default function Home() {
   const mounted = useMounted();
@@ -32,13 +33,29 @@ export default function Home() {
       />
       <StContent>
         <StSectionSpacing />
-        <Calendar />
+
+        <FadeInOnScroll>
+          <Calendar />
+        </FadeInOnScroll>
+
         <StSectionSpacing />
-        <Parcours />
+
+        <FadeInOnScroll>
+          <Parcours />
+        </FadeInOnScroll>
+
         <StSectionSpacing />
-        <SignUps />
+
+        <FadeInOnScroll>
+          <SignUps />
+        </FadeInOnScroll>
+
         <StSectionSpacing />
-        <Rules />
+
+        <FadeInOnScroll>
+          <Rules />
+        </FadeInOnScroll>
+
         <StSectionSpacing />
       </StContent>
     </StMain>
