@@ -2,7 +2,7 @@
 
 import { Landing } from "../components/Landing";
 import { Calendar } from "../components/calendar";
-import { Parcours } from "../components/Parcours";
+import { Parcours } from "../components/parcours/Parcours";
 import { SignUps } from "../components/sign-up";
 import { Rules } from "../components/Rules";
 import styled from "styled-components";
