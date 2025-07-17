@@ -13,6 +13,7 @@ export default function Success() {
     <Landing
       title={"Bedankt voor je inschriving!"}
       subtitle={"Tot op zondag 7 September"}
+      body=""
       cta={{
         text: "Terug naar de website",
         onClick: () => router.push("/"),
