@@ -23,7 +23,7 @@ const sections: Section[] = [
     zoom: { xPercent: 100, yPercent: 90, scale: 2 },
   },
   {
-    title: "De Herhaling",
+    title: "Terug naar start",
     text: "Langs de Sint-Christianastraat keren ze telkens terug naar de start, vijftien keer opnieuw. Vijftien keer wachten, aanvallen, afzien, en dromen van de ultieme glorie.",
     zoom: { xPercent: 70, yPercent: 50, scale: 2.5 },
   },
