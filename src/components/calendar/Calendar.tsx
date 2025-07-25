@@ -18,22 +18,22 @@ export const Calendar = () => {
             <CalendarItem
               time="13u30*"
               title="Kinderen 1-5 jaar"
-              description="Rechte lijn, … meter"
+              description="Rechte lijn"
             />
             <CalendarItem
               time="13u40*"
               title="Kinderen 6-7 jaar"
-              description="1 kleine ronde, … meter"
+              description="1 kleine ronde"
             />
             <CalendarItem
               time="13u50*"
               title="Kinderen 8-9 jaar"
-              description="2 kleine rondes, … meter"
+              description="2 kleine rondes"
             />
             <CalendarItem
               time="14u00*"
               title="Kinderen 10-11 jaar"
-              description="3 kleine rondes, … meter"
+              description="3 kleine rondes"
             />
             <CalendarItem time="14u20" title="Prijsuitreiking" />
           </StDetails>

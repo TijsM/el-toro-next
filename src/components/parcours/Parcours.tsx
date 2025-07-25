@@ -14,7 +14,7 @@ import {
 const sections: Section[] = [
   {
     title: "De Start",
-    text: "Onder aan de mythische Rotse van Dikkelvenne wordt het strijdtoneel geopend. Hier zetten de renners aan voor een heroïsche tocht door het hart van de Vlaamse Ardennen.",
+    text: "Onder aan de mythische Rotse van Dikkelvenne wordt het strijdtoneel geopend. Hier zetten de renners aan voor een heroïsche tocht door het hart van de prachtige Scheldevallei.",
     zoom: { xPercent: 60, yPercent: 60, scale: 1.2 },
   },
   {
