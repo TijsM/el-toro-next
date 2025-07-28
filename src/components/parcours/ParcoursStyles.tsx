@@ -44,9 +44,8 @@ export const MobileControlButton = styled.button`
   color: ${({ theme }) => theme.colors.dark};
   border: none;
   border-radius: 50%;
-  min-width: 40px;
-  min-height: 40px;
-  font-size: 1.5em;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   opacity: 0.85;
   transition: background 0.2s;
