@@ -61,15 +61,7 @@ export const Parcours = () => {
     }
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.matchMedia(breakpoints.small.replace("@media ", "")).matches) {
-        scrollToCard(mostVisibleIndex);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [mostVisibleIndex]);
+
 
   const { xPercent, yPercent, scale } = sections[mostVisibleIndex].zoom;
 

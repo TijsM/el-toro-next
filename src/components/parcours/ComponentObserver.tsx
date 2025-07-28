@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, ReactNode } from "react";
+import React, { useRef, useEffect, ReactNode } from "react";
 
 interface ComponentObserverProps {
   children: ReactNode;
