@@ -65,7 +65,7 @@ export const ParcoursCardsContainer = styled.div`
     flex-direction: row;
     overflow-x: auto;
     gap: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 4px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
@@ -80,8 +80,8 @@ export const ParcoursCard = styled.div`
   justify-content: center;
   @media ${breakpoints.small} {
     height: auto;
-    min-width: 70vw;
-    max-width: 80vw;
+    min-width: 75vw;
+    max-width: 85vw;
     flex: 0 0 auto;
     scroll-snap-align: center;
   }
@@ -130,6 +130,7 @@ export const ParcoursCardTitle = styled.p`
   padding-left: 50px;
   @media ${breakpoints.small} {
     padding-left: 0px;
+    margin-bottom: 4px;
   }
 `;
 
@@ -138,8 +139,10 @@ export const ParcoursCardContent = styled.div`
   border-left: #065755 2px solid;
   padding: 10px 50px;
   @media ${breakpoints.small} {
+    font-size: 1em;
+    line-height: 1.2em;
     margin: 0px;
-    margin-top: 10px;
+    margin-top: 0px;
     border-left: none;
     padding: 10px 0px;
   }

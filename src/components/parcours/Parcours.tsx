@@ -61,8 +61,6 @@ export const Parcours = () => {
     }
   };
 
-
-
   const { xPercent, yPercent, scale } = sections[mostVisibleIndex].zoom;
 
   return (
