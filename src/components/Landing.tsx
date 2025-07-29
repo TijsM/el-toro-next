@@ -34,6 +34,11 @@ export const Landing = ({ title, subtitle, body, cta }: LandingProps) => {
           text={cta.text}
           size="large"
           inverted
+          trackingName="landing_cta"
+          trackingProperties={{
+            section: "landing",
+            cta_text: cta.text,
+          }}
         />
       </FadeInOnScroll>
     </StHeader>

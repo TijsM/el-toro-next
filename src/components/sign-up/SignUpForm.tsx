@@ -9,6 +9,7 @@ import { allParticipantsAreValid } from "../../schema/Participant";
 import { useStripe } from "../../hooks/useStripe";
 import { getParticipantsFromUrl } from "../../utils/getParticipantsFromUrl";
 import { MandatoryInfoForm } from "./MandatoryInfoForm";
+import { usePostHogTracking } from "../../hooks/usePostHogTracking";
 
 // https://vercel.com/guides/getting-started-with-nextjs-typescript-stripe
 
@@ -20,6 +21,7 @@ export const SignUpForm = () => {
   ]);
 
   const { openStripeCheckout, loading } = useStripe();
+  const { trackFormSubmission } = usePostHogTracking();
 
   useEffect(() => {
     const participantsFromUrl = getParticipantsFromUrl();
@@ -71,15 +73,34 @@ export const SignUpForm = () => {
         }}
         text={"Extra deelnemer toevoegen"}
         size={"medium"}
+        trackingName="add_participant"
+        trackingProperties={{
+          section: "signup_form",
+          current_participant_count: participants.length,
+        }}
       />
       <PriceCalculation participants={participants} />
       <StPaymentButtonContainer>
         <Button
           loading={loading}
           disabled={!allParticipantsAreValid(participants) || !email}
-          onClick={() => openStripeCheckout(participants, email)}
+          onClick={() => {
+            trackFormSubmission("signup_form", {
+              participant_count: participants.length,
+              form_valid: allParticipantsAreValid(participants),
+              email_provided: !!email,
+            });
+            openStripeCheckout(participants, email);
+          }}
           text={"Ga naar betaling"}
           size={"medium"}
+          trackingName="proceed_to_payment"
+          trackingProperties={{
+            section: "signup_form",
+            participant_count: participants.length,
+            form_valid: allParticipantsAreValid(participants),
+            email_provided: !!email,
+          }}
         />
       </StPaymentButtonContainer>
     </StContainer>
@@ -92,15 +113,12 @@ const StContainer = styled.div`
   padding: 0 128px;
 
   @media ${breakpoints.big} {
-    /* background-color: green; */
     padding: 0 64px;
   }
   @media ${breakpoints.medium} {
-    /* background-color: red; */
     padding: 0 32px;
   }
   @media ${breakpoints.small} {
-    /* background-color: blue; */
     padding: 0 16px;
   }
 `;

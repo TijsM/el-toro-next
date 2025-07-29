@@ -32,6 +32,11 @@ export const MandatoryInfoForm = ({
         name="email"
         type="email"
         required
+        trackingEnabled={true}
+        trackingProperties={{
+          section: "mandatory_info_form",
+          field_type: "email",
+        }}
       />
 
       {lostFocusOnForm && !errors.valid && <ErrorList errors={errors.errors} />}

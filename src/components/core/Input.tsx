@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { usePostHogTracking } from "../../hooks/usePostHogTracking";
 
 type BaseInputProps = {
   label: string;
@@ -10,6 +11,8 @@ type BaseInputProps = {
   error?: string;
   required?: boolean;
   disabled?: boolean;
+  trackingEnabled?: boolean;
+  trackingProperties?: Record<string, any>;
 };
 
 type StringInputProps = BaseInputProps & {
@@ -37,7 +40,28 @@ export const Input: React.FC<InputProps> = ({
   required,
   disabled = false,
   type = "text",
+  trackingEnabled = false,
+  trackingProperties,
 }: InputProps) => {
+  const { trackInputChange } = usePostHogTracking();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Track the input change if tracking is enabled
+    if (trackingEnabled) {
+      trackInputChange(name, type, {
+        input_label: label,
+        input_required: required,
+        input_disabled: disabled,
+        input_has_error: !!error,
+        input_value_length: e.target.value.length,
+        ...trackingProperties,
+      });
+    }
+
+    // Call the original onChange handler
+    onChange(e);
+  };
+
   return (
     <StContainer>
       <StLabel htmlFor={name}>{required ? `${label} *` : label}</StLabel>
@@ -46,7 +70,7 @@ export const Input: React.FC<InputProps> = ({
         name={name}
         placeholder={placeholder}
         value={value != null ? value.toString() : ""}
-        onChange={onChange}
+        onChange={handleChange}
         type={type}
         required={required}
         disabled={disabled}

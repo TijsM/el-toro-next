@@ -56,6 +56,12 @@ export const ParticipantForm = ({
             onClick={deleteParticipant}
             text={"verwijder deelnemer"}
             size={"small"}
+            trackingName="delete_participant"
+            trackingProperties={{
+              section: "participant_form",
+              participant_number: count,
+              total_participants: count,
+            }}
           />
         )}
       </StHeaderRow>
@@ -71,6 +77,12 @@ export const ParticipantForm = ({
           label={"Volledige naam"}
           name="name"
           required
+          trackingEnabled={true}
+          trackingProperties={{
+            section: "participant_form",
+            participant_number: count,
+            field_type: "participant_name",
+          }}
         />
         <Input
           type="text"
@@ -81,6 +93,12 @@ export const ParticipantForm = ({
           label={"Rijksregisternummer"}
           name="socialSecurityNumber"
           required
+          trackingEnabled={true}
+          trackingProperties={{
+            section: "participant_form",
+            participant_number: count,
+            field_type: "social_security_number",
+          }}
         />
         <Input
           type="text"
@@ -89,6 +107,12 @@ export const ParticipantForm = ({
           label={"Geboorteplaats"}
           name="placeOfBirth"
           required
+          trackingEnabled={true}
+          trackingProperties={{
+            section: "participant_form",
+            participant_number: count,
+            field_type: "place_of_birth",
+          }}
         />
         <Input
           type="text"
@@ -97,6 +121,12 @@ export const ParticipantForm = ({
           label={"Woonplaats"}
           name="city"
           required
+          trackingEnabled={true}
+          trackingProperties={{
+            section: "participant_form",
+            participant_number: count,
+            field_type: "city",
+          }}
         />
         <Input
           type="date"
@@ -105,6 +135,12 @@ export const ParticipantForm = ({
           label={"Geboortedatum"}
           name="dateOfBirth"
           required
+          trackingEnabled={true}
+          trackingProperties={{
+            section: "participant_form",
+            participant_number: count,
+            field_type: "date_of_birth",
+          }}
         />
       </StFormItems>
       {lostFocusOnForm && !errors.valid && <ErrorList errors={errors.errors} />}

@@ -6,6 +6,7 @@ import "./globals.css";
 import StyledJsxRegistry from "./registry";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../constants/theme";
+import { PostHogProvider } from "../components/PostHogProvider";
 
 export default function RootLayout({
   children,
@@ -16,7 +17,9 @@ export default function RootLayout({
     <ThemeProvider theme={theme}>
       <html>
         <body>
-          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+          <PostHogProvider>
+            <StyledJsxRegistry>{children}</StyledJsxRegistry>
+          </PostHogProvider>
         </body>
       </html>
     </ThemeProvider>

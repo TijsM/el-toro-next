@@ -1,4 +1,5 @@
 import styled, { DefaultTheme, useTheme } from "styled-components";
+import { usePostHogTracking } from "../../hooks/usePostHogTracking";
 
 type ButtonSizes = "small" | "medium" | "large";
 
@@ -9,6 +10,8 @@ type ButtonProps = {
   inverted?: boolean;
   disabled?: boolean;
   loading?: boolean;
+  trackingName?: string;
+  trackingProperties?: Record<string, any>;
 };
 
 export const Button = ({
@@ -18,10 +21,29 @@ export const Button = ({
   inverted,
   disabled,
   loading,
+  trackingName,
+  trackingProperties,
 }: ButtonProps) => {
+  const { trackButtonClick } = usePostHogTracking();
+
+  const handleClick = () => {
+    if (trackingName) {
+      trackButtonClick(trackingName, {
+        button_text: text,
+        button_size: size,
+        button_inverted: inverted,
+        button_disabled: disabled,
+        button_loading: loading,
+        ...trackingProperties,
+      });
+    }
+
+    onClick();
+  };
+
   return (
     <StButton
-      onClick={onClick}
+      onClick={handleClick}
       size={size}
       inverted={inverted}
       disabled={disabled}
