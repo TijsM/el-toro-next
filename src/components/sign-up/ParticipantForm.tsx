@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Button, Input } from "../core";
+import { Button, Input, Select } from "../core";
 import { H3 } from "../../styled-components/Types";
-import { useMemo, useState } from "react";
-import { Li, Ul } from "../core/List";
+import { useMemo, useState, useEffect } from "react";
 import { Particpant, participantIsValid } from "../../schema/Participant";
 import { ErrorList } from "../core/ErrorList";
+import { isParticipantAdult } from "../../utils/getParticipantAge";
 
 type ParticipantFormProps = {
   participant: Particpant;
@@ -19,6 +19,7 @@ export const defaultParticipant: Particpant = {
   placeOfBirth: "",
   city: "",
   dateOfBirth: new Date(),
+  type: "",
 };
 
 export const ParticipantForm = ({
@@ -46,6 +47,19 @@ export const ParticipantForm = ({
   const errors = useMemo(() => {
     return participantIsValid(participant);
   }, [participant]);
+
+  const isAdult = useMemo(() => {
+    return isParticipantAdult(participant.dateOfBirth);
+  }, [participant.dateOfBirth]);
+
+  // Clear type if participant becomes a child
+  useEffect(() => {
+    if (!isAdult && participant.type) {
+      const updatedParticipant = { ...participant };
+      updatedParticipant.type = "";
+      setParticipant(updatedParticipant);
+    }
+  }, [isAdult, participant.type, participant, setParticipant]);
 
   return (
     <StParticipantContainer>
@@ -84,6 +98,7 @@ export const ParticipantForm = ({
             field_type: "participant_name",
           }}
         />
+        
         <Input
           type="text"
           value={participant.socialSecurityNumber}
@@ -142,6 +157,26 @@ export const ParticipantForm = ({
             field_type: "date_of_birth",
           }}
         />
+        {isAdult && (
+          <Select
+            value={participant.type || ""}
+            onChange={(e) => updateParticipant("type", e.target.value)}
+            label={"Type evenement"}
+            name="type"
+            placeholder="Selecteer het type evenement"
+            required
+            options={[
+              { value: "Sympatieke El Toro", label: "Sympatieke El Toro" },
+              { value: "Retro El Toro Koers", label: "Retro El Toro Koers" },
+            ]}
+            trackingEnabled={true}
+            trackingProperties={{
+              section: "participant_form",
+              participant_number: count,
+              field_type: "type_selection",
+            }}
+          />
+        )}
       </StFormItems>
       {lostFocusOnForm && !errors.valid && <ErrorList errors={errors.errors} />}
     </StParticipantContainer>
@@ -164,8 +199,3 @@ const StParticipantContainer = styled.div`
   padding-bottom: 48px;
 `;
 
-const StErrors = styled.div`
-  color: ${({ theme }) => theme.colors.red};
-`;
-
-const StUl = styled(Ul)``;

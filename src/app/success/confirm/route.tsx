@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
       fields: {
         Naam: participant.name,
         Email: email,
+        Type: participant.type,
         Geboortedatum: dayjs(participant.dateOfBirth).format("YYYY-MM-DD"),
         Woonplaats: participant.city,
         Geboorteplaats: participant.placeOfBirth,

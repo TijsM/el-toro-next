@@ -1,4 +1,6 @@
 import { object, string, date } from "yup";
+import dayjs from "dayjs";
+import { CATEGORIES } from "../constants/categories";
 
 export type Particpant = {
   name?: string;
@@ -6,6 +8,7 @@ export type Particpant = {
   placeOfBirth?: string;
   city?: string;
   dateOfBirth?: Date;
+  type?: string;
 };
 
 export const ParticipantSchema = object({
@@ -23,6 +26,31 @@ export const ParticipantSchema = object({
     .default(() => new Date())
     .min(new Date(1900, 1, 1), "Geboortedatum moet na 1900 zijn")
     .max(new Date(), "Geboortedatum moet in het verleden zijn"),
+  type: string()
+    .test('type-validation', function(value) {
+      const { dateOfBirth } = this.parent;
+      if (!dateOfBirth) return true; // If no date of birth, skip validation
+      
+      const age = dayjs().diff(dateOfBirth, "years");
+      const isAdult = age >= CATEGORIES.adult.minAge;
+      
+      // For children, type should be empty or undefined
+      if (!isAdult) {
+        return !value || value === ""; // Children should have no type set
+      }
+      
+      // For adults, type is required and must be valid
+      if (isAdult) {
+        if (!value) {
+          return this.createError({ message: 'Type evenement moet geselecteerd zijn' });
+        }
+        if (!["Sympatieke El Toro", "Retro El Toro Koers"].includes(value)) {
+          return this.createError({ message: 'Selecteer een geldig type evenement' });
+        }
+      }
+      
+      return true;
+    }),
 });
 
 export const participantIsValid = (participant: Particpant) => {

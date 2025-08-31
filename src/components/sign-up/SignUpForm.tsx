@@ -72,7 +72,7 @@ export const SignUpForm = () => {
           setParticipants([...participants, defaultParticipant]);
         }}
         text={"Extra deelnemer toevoegen"}
-        size={"medium"}
+        size={"small"}
         trackingName="add_participant"
         trackingProperties={{
           section: "signup_form",
@@ -93,7 +93,7 @@ export const SignUpForm = () => {
             openStripeCheckout(participants, email);
           }}
           text={"Ga naar betaling"}
-          size={"medium"}
+          size={"large"}
           trackingName="proceed_to_payment"
           trackingProperties={{
             section: "signup_form",
