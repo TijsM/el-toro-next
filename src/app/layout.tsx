@@ -7,6 +7,7 @@ import StyledJsxRegistry from "./registry";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../constants/theme";
 import { PostHogProvider } from "../components/PostHogProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function RootLayout({
   children,
@@ -30,6 +31,7 @@ export default function RootLayout({
           <PostHogProvider>
             <StyledJsxRegistry>{children}</StyledJsxRegistry>
           </PostHogProvider>
+          <GoogleAnalytics gaId="G-2Z05BBQFX2" />
         </body>
       </html>
     </ThemeProvider>
