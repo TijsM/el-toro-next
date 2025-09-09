@@ -26,6 +26,7 @@ export default function RootLayout({
             content="Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="google-site-verification" content="5IDdDgJAc2CBYY-SMmjn--_NT6uNI6nwFuAYY-uKvMs" />
         </head>
         <body>
           <PostHogProvider>
