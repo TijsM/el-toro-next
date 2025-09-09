@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../constants/theme";
 import { PostHogProvider } from "../components/PostHogProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Footer } from "../components/Footer";
 
 export default function RootLayout({
   children,
@@ -30,7 +31,10 @@ export default function RootLayout({
         </head>
         <body>
           <PostHogProvider>
-            <StyledJsxRegistry>{children}</StyledJsxRegistry>
+            <StyledJsxRegistry>
+              {children}
+              <Footer />
+            </StyledJsxRegistry>
           </PostHogProvider>
           <GoogleAnalytics gaId="G-2Z05BBQFX2" />
         </body>
