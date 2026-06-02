@@ -20,7 +20,7 @@ export default function RootLayout({
       <html lang="nl">
         <head>
           <title>
-            Retro Grote Prijs El Toro - Dikkelvenne - 7 September 2025
+            Retro Grote Prijs El Toro - Dikkelvenne - 6 September 2026
           </title>
           <meta
             name="description"

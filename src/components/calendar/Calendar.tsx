@@ -10,32 +10,32 @@ export const Calendar = () => {
     <StSection>
       <H2 className="textYellow">Kalender</H2>
       <StContent>
-        <StH3 className="textGreen">7 September 2025</StH3>
+        <StH3 className="textGreen">6 September 2026</StH3>
 
         <StArticle>
           <StH3>Kinderkoers</StH3>
           <StDetails>
             <CalendarItem
-              time="13u30*"
+              time="14u30*"
               title="Kinderen 1-5 jaar"
               description="Rechte lijn"
             />
             <CalendarItem
-              time="13u40*"
+              time="14u40*"
               title="Kinderen 6-7 jaar"
               description="1 kleine ronde"
             />
             <CalendarItem
-              time="13u50*"
+              time="14u50*"
               title="Kinderen 8-9 jaar"
               description="2 kleine rondes"
             />
             <CalendarItem
-              time="14u00*"
+              time="15u00*"
               title="Kinderen 10-11 jaar"
               description="3 kleine rondes"
             />
-            <CalendarItem time="14u20" title="Prijsuitreiking" />
+            <CalendarItem time="aansluitend" title="Prijsuitreiking" />
           </StDetails>
         </StArticle>
 
@@ -43,7 +43,7 @@ export const Calendar = () => {
           <StH3>Sympatieke El Toro</StH3>
           <StDetails>
             <CalendarItem
-              time="14u45"
+              time="15u20"
               title="Start"
               description="Ludieke & Vrouwenkoers - 3 kleine verkenningsrondes, 12 kleine rondes koers, met finish beneden"
             />

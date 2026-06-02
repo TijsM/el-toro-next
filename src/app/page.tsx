@@ -5,6 +5,7 @@ import { Calendar } from "../components/calendar";
 import { Parcours } from "../components/parcours/Parcours";
 import { SignUps } from "../components/sign-up";
 import { Rules } from "../components/Rules";
+import { Posters } from "../components/Posters";
 import styled from "styled-components";
 import { breakpoints } from "../constants/breakpoints";
 import { useMounted } from "@/hooks/useMounted";
@@ -22,12 +23,12 @@ export default function Home() {
     <StMain>
       <Landing
         title={"Retro Grote Prijs El Toro"}
-        subtitle={"7 September 2025"}
+        subtitle={"6 September 2026"}
         body={
           "Een koers waar winnen ondergeschikt is aan vertier, waar gestart wordt in retro outfit en waar we van klikpedalen en dikke zanten niet moeten weten."
         }
         cta={{
-          text: "Inschrijven voor 11e editie",
+          text: "Inschrijven voor 12e editie",
           onClick: () => element?.scrollIntoView({ behavior: "smooth" }),
         }}
       />
@@ -54,6 +55,12 @@ export default function Home() {
 
         <FadeInOnScroll>
           <Rules />
+        </FadeInOnScroll>
+
+        <StSectionSpacing />
+
+        <FadeInOnScroll>
+          <Posters />
         </FadeInOnScroll>
 
         <StSectionSpacing />

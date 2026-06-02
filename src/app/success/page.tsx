@@ -12,7 +12,7 @@ export default function Success() {
   return (
     <Landing
       title={"Bedankt voor je inschriving!"}
-      subtitle={"Tot op zondag 7 September"}
+      subtitle={"Tot op zondag 6 September"}
       body={""}
       cta={{
         text: "Terug naar de website",
